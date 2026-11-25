@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Collectif 22h13min</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Open+Sans:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--fr:#C0295E;--nv:#061F5F;--cr:#FFF3DC;--ink:#1d1d2b;--mut:#6b6577}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:'Open Sans',sans-serif;color:var(--ink);background:var(--cr);display:flex;flex-direction:column;min-height:100svh}
+a{color:inherit}
+img{display:block;max-width:100%}
+header.barre{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 28px;background:var(--fr);color:var(--cr)}
+.marque{display:flex;align-items:baseline;gap:8px;text-decoration:none;font-family:'Oswald',sans-serif;letter-spacing:.06em}
+.marque b{font-weight:500;font-size:26px;color:var(--nv)}
+.marque span{font-weight:300;font-size:13px;letter-spacing:.32em}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;font-family:'Oswald',sans-serif;font-weight:400;font-size:15px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+nav a:hover,nav a.on{opacity:1;border-bottom:2px solid var(--nv)}
+main{flex:1 1 auto;display:flex;padding:28px;min-height:0}
+.cadre{width:100%;max-width:1100px;margin:auto}
+h1,h2{font-family:'Oswald',sans-serif;font-weight:400;color:var(--nv);letter-spacing:.04em;margin:0}
+h1{font-size:clamp(34px,5vw,54px);text-transform:uppercase}
+.kicker{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--fr);margin:0 0 8px}
+.lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--fr);margin:10px 0 18px}
+p{line-height:1.65;margin:0 0 12px}
+footer.pied{flex:0 0 auto;text-align:center;padding:10px 20px;font-size:12px;color:var(--mut);letter-spacing:.06em}
+.btn{display:inline-block;background:var(--nv);color:var(--cr);text-decoration:none;padding:10px 20px;border-radius:2px;font-family:'Oswald',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:14px}
+.btn.clair{background:transparent;color:var(--nv);border:1px solid var(--nv)}
+@media(max-width:760px){
+  header.barre{flex-direction:column;align-items:center;padding:10px 14px;gap:6px}
+  nav ul{gap:12px;justify-content:center}
+  nav a{font-size:13px;letter-spacing:.08em}
+  main{padding:16px}
+  h1{font-size:30px}
+  .lead{margin:6px 0 10px}
+}
+
+.ct{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.bloc{background:var(--nv);color:var(--cr);padding:34px}
+.bloc h2{color:var(--cr);font-size:15px;letter-spacing:.3em;text-transform:uppercase;margin:0 0 6px}
+.bloc p{margin:0 0 20px}
+.mail{font-family:'Cormorant Garamond',serif;font-size:28px}
+.copier{background:none;border:1px solid var(--cr);color:var(--cr);padding:6px 14px;font-family:inherit;cursor:pointer;margin-top:6px}
+@media(max-width:760px){.ct{grid-template-columns:1fr;gap:16px}.bloc{padding:22px}}
+main p:not([class]){text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+</style>
+</head>
+<body class="">
+<header class="barre"><a class="marque" href="index.html"><span>COLLECTIF</span><b>22H13</b><span>MIN</span></a><nav><ul><li><a href="index.html">Accueil</a></li><li><a href="collectif.html">Le collectif</a></li><li><a href="projets.html">Projets</a></li><li><a href="agenda.html">Agenda</a></li><li><a href="contact.html" class="on">Contact</a></li></ul></nav></header>
+<main><div class="cadre">
+<div class="ct">
+  <div><p class="kicker">Contact</p><h1>Programmer un spectacle</h1>
+    <p class="lead">Écrivez-nous</p>
+    <p>Communes, associations, lieux patrimoniaux : écrivez-nous pour recevoir un dossier de diffusion ou imaginer une forme adaptée à votre lieu.</p></div>
+  <div class="bloc">
+    <h2>Écrire</h2><p class="mail"><a href="mailto:22h13min@gmail.com" style="text-decoration:none">22h13min@gmail.com</a><br><button class="copier" type="button" id="copier">Copier l'adresse</button></p>
+    <h2>Adresse</h2><p>Collectif 22h13min<br>8 rue du Docteur Ombras<br>34660 Cournonterral</p>
+    <h2>Association</h2><p style="margin:0;font-size:13px">Loi 1901 · SIRET 933 794 398 00018</p>
+  </div>
+</div>
+</div></main>
+<footer class="pied">Collectif 22h13min · L'heure de l'art · Cournonterral, Hérault · 22h13.fr</footer>
+<script>document.getElementById('copier').addEventListener('click',async e=>{try{await navigator.clipboard.writeText('22h13min@gmail.com');e.target.textContent='Adresse copiée'}catch(_){e.target.textContent='22h13min@gmail.com'}});</script>
+</body>
+</html>

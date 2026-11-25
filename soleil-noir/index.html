@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soleil noir — Les Murmures de Lou</title>
+<meta name="description" content="Soleil noir, requiem et poèmes de Verlaine. Créations originales de Samuel Zaroukian pour l'ensemble vocal Les Murmures de Lou.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nuit:#010811; --fond-releve:#151f2d; --ardoise:#272b38;
+    --sable:#f0d0b0; --texte-doux:#a8978a; --lune:#dac3b0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:auto}
+  body{margin:0;background:var(--nuit);color:var(--sable);font-family:"Public Sans",Helvetica,Arial,sans-serif;font-weight:300;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--lune)}
+  img{max-width:100%;display:block}
+
+  /* navigation */
+  nav{position:sticky;top:0;z-index:5;background:rgba(1,8,17,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--ardoise)}
+  nav ul{list-style:none;margin:0 auto;padding:14px 16px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;max-width:1200px}
+  nav a{color:var(--sable);text-decoration:none;font-weight:400;font-size:11px;letter-spacing:.26em;text-transform:uppercase}
+  nav a:hover,nav a:focus-visible{color:var(--lune)}
+
+  /* l'affiche, telle quelle */
+  .affiche{padding:40px 16px 64px;display:flex;justify-content:center}
+  .affiche img{width:auto;max-height:calc(100vh - 120px);max-width:min(100%,680px)}
+
+  section{max-width:680px;margin:0 auto;padding:72px 24px;border-top:1px solid var(--ardoise)}
+  h2{margin:0 0 40px;text-align:center;font-weight:200;font-size:22px;letter-spacing:.3em;padding-left:.3em;text-transform:uppercase}
+  h3{margin:40px 0 4px;font-weight:200;font-size:19px;letter-spacing:.12em;text-transform:uppercase}
+  .role{margin:0 0 14px;font-weight:400;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--texte-doux)}
+  p{margin:0 0 18px}
+  .surtitre{text-align:center;font-weight:400;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--texte-doux);margin:-24px 0 40px}
+
+  blockquote{margin:0 0 48px;text-align:center;font-style:italic;font-size:18px;line-height:1.8}
+  blockquote cite{display:block;margin-top:14px;font-style:normal;font-weight:400;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--texte-doux)}
+  .exergue{text-align:center;font-style:italic}
+
+  /* programme */
+  ol.programme{list-style:none;margin:0;padding:0;counter-reset:n}
+  ol.programme li{display:flex;gap:18px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--ardoise)}
+  ol.programme li::before{counter-increment:n;content:counter(n);min-width:24px;text-align:right;font-weight:200;color:var(--texte-doux);font-size:15px}
+  ol.programme li.sans-n::before{content:"—";counter-increment:none}
+  .latin{font-weight:300;font-size:14px;letter-spacing:.2em;text-transform:uppercase}
+  .verlaine{font-style:italic}
+  ol.programme .eff{margin-left:auto;padding-left:12px;text-align:right;font-weight:400;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--texte-doux)}
+  .attacca{margin-left:10px;font-weight:400;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--lune);font-style:normal;white-space:nowrap}
+  @media (max-width:560px){ol.programme li{flex-wrap:wrap;row-gap:2px}ol.programme li>span:first-child{flex:1 1 0;min-width:0}ol.programme .eff{flex-basis:100%;margin-left:42px;padding-left:0;text-align:left}}
+  .note-prog{margin-top:24px;font-size:14px;color:var(--texte-doux);text-align:center}
+
+  /* dates */
+  .date{background:var(--fond-releve);border:1px solid var(--ardoise);text-align:center;padding:28px 20px;margin:0 0 16px}
+  .date .j{color:var(--lune);font-weight:200;font-size:22px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px}
+  .date .l{font-weight:400;font-size:13px;letter-spacing:.22em;text-transform:uppercase;margin:0 0 6px}
+  .date .e{font-weight:400;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--texte-doux);margin:0}
+  .passees{margin-top:40px}
+  .passees h3{text-align:center;font-size:14px;letter-spacing:.24em;color:var(--texte-doux)}
+  .passees ul{list-style:none;padding:0;margin:16px 0 0;text-align:center;color:var(--texte-doux);font-size:15px}
+  .passees li{padding:6px 0}
+
+  /* en pratique */
+  dl.pratique{margin:0;display:grid;grid-template-columns:auto 1fr;gap:12px 24px}
+  dl.pratique dt{font-weight:400;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--texte-doux);padding-top:5px}
+  dl.pratique dd{margin:0}
+  @media (max-width:560px){dl.pratique{grid-template-columns:1fr;gap:2px}dl.pratique dd{margin-bottom:14px}}
+
+  /* contact */
+  .contact{text-align:center}
+  .contact .nom{font-weight:200;font-size:19px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px}
+  .contact .bloc{margin:0 0 36px}
+  .contact .coord{font-size:18px;letter-spacing:.04em;margin:4px 0}
+  .copier{font:inherit;font-weight:400;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--sable);background:none;border:1px solid var(--ardoise);padding:8px 14px;margin-top:8px;cursor:pointer}
+  .copier:hover,.copier:focus-visible{border-color:var(--lune);color:var(--lune)}
+
+
+  /* médias */
+  .vide{text-align:center;color:var(--texte-doux);font-size:15px;border:1px dashed var(--ardoise);padding:28px 20px;margin:0}
+  .sons{list-style:none;margin:0;padding:0}
+  .sons li{padding:16px 0;border-bottom:1px solid var(--ardoise)}
+  .sons .t{margin:0 0 2px}
+  .sons .d{margin:0 0 10px;font-size:13px;color:var(--texte-doux)}
+  .sons audio{width:100%;height:40px}
+  .videos{display:grid;gap:24px}
+  .videos video{width:100%;background:#000}
+  .videos .lien{display:block;border:1px solid var(--ardoise);padding:18px 20px;text-decoration:none;color:var(--sable)}
+  .videos .lien span{display:block;font-size:13px;color:var(--texte-doux)}
+  .videos figcaption,.photos figcaption{font-size:13px;color:var(--texte-doux);margin-top:8px}
+  .videos figure,.photos figure{margin:0}
+  .photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+  .photos button{all:unset;cursor:zoom-in;display:block}
+  .photos img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .visionneuse{position:fixed;inset:0;background:rgba(1,8,17,.96);display:none;align-items:center;justify-content:center;z-index:20;padding:24px;flex-direction:column}
+  .visionneuse.ouverte{display:flex}
+  .visionneuse img{max-height:82vh;width:auto}
+  .visionneuse p{color:var(--texte-doux);font-size:14px;margin:14px 0 0;text-align:center}
+  .visionneuse button{position:absolute;top:16px;right:16px;font:inherit;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--sable);background:none;border:1px solid var(--ardoise);padding:8px 14px;cursor:pointer}
+  .section-large{max-width:960px}
+
+  /* pages */
+  .vue{display:none}
+  .vue.active{display:block}
+  section.vue{scroll-margin-top:200px;border-top:0;padding-top:56px;min-height:calc(100vh - 140px)}
+  section.vue.accueil{max-width:none;padding:0;min-height:0}
+  .affiche{padding:40px 16px 32px}
+  .accroche{text-align:center;font-style:italic;color:var(--texte-doux);margin:0 0 32px;padding:0 24px}
+  .entrees{list-style:none;margin:0 auto;padding:0 24px 72px;max-width:520px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .entrees a{display:block;text-align:center;border:1px solid var(--ardoise);padding:16px 10px;color:var(--sable);text-decoration:none;font-weight:400;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+  .entrees a:hover,.entrees a:focus-visible{border-color:var(--lune);color:var(--lune)}
+  nav a[aria-current="page"]{color:var(--lune);border-bottom:1px solid var(--lune);padding-bottom:3px}
+  .suite{display:flex;justify-content:space-between;gap:16px;margin-top:56px;padding-top:24px;border-top:1px solid var(--ardoise)}
+  .suite a{color:var(--sable);text-decoration:none;font-weight:400;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+  .suite a:hover,.suite a:focus-visible{color:var(--lune)}
+  .suite .vide-lien{visibility:hidden}
+
+  /* accueil : l'affiche en plein écran, menu inclus */
+  body.sur-accueil nav.haut, body.sur-accueil footer{display:none}
+  .hero{position:relative;height:100vh;min-height:520px;overflow:hidden;color:var(--sable);text-align:center;
+    background:#010811 url(fond-paysage.jpg) center top/cover no-repeat;
+    display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:4vh 24px 3vh;box-sizing:border-box}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(to bottom,rgba(1,8,17,.35) 0%,rgba(1,8,17,0) 12%,rgba(1,8,17,0) 50%,rgba(1,8,17,.75) 78%,rgba(1,8,17,.92) 100%)}
+  .hero>*{position:relative;z-index:1}
+  .h-ensemble{margin:0;font-weight:400;font-size:13px;letter-spacing:.3em;padding-left:.3em;text-transform:uppercase}
+  .h-trait{display:block;width:1px;height:5vh;background:rgba(240,208,176,.45);margin:2vh auto}
+  .h-titre{margin-top:auto}
+  .hero h1{margin:0;font-weight:100;font-size:clamp(44px,8.5vw,128px);line-height:1;letter-spacing:.2em;padding-left:.2em;text-transform:uppercase;white-space:nowrap}
+  .h-sous{margin:0 0 8px;font-weight:400;font-size:clamp(11px,1.05vw,15px);letter-spacing:.26em;padding-left:.26em;text-transform:uppercase}
+  .h-credit{margin:0;font-weight:400;font-size:clamp(9px,.75vw,11px);letter-spacing:.28em;padding-left:.28em;text-transform:uppercase;color:var(--texte-doux)}
+  .menu-hero{margin-top:4vh;width:100%;max-width:1200px}
+  .menu-hero ul{list-style:none;margin:0;padding:18px 0 0;border-top:1px solid rgba(240,208,176,.2);display:flex;flex-wrap:wrap;justify-content:center;gap:4px 36px}
+  .menu-hero a{display:inline-block;white-space:nowrap;color:var(--sable);text-decoration:none;font-weight:400;font-size:12px;letter-spacing:.24em;text-transform:uppercase;padding:10px 0}
+  .menu-hero a::after{content:"";display:block;height:1px;width:0;margin:6px auto 0;background:var(--lune);transition:width .3s}
+  .menu-hero a:hover,.menu-hero a:focus-visible{color:var(--lune)}
+  .menu-hero a:hover::after,.menu-hero a:focus-visible::after{width:100%}
+  /* téléphone, tablette debout : l'image en hauteur */
+  @media (max-aspect-ratio: 1/1){
+    .hero{background-image:url(fond-portrait.jpg);background-position:center top;padding:5vh 20px 2vh}
+    .h-trait{height:4vh}
+    .hero h1{font-size:clamp(28px,9vw,64px);letter-spacing:.16em;padding-left:.16em}
+    .menu-hero ul{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;padding-top:6px}
+    .menu-hero li{border-bottom:1px solid rgba(240,208,176,.15)}
+    .menu-hero a{font-size:11px;letter-spacing:.18em;padding:11px 0;white-space:normal}
+    .menu-hero a::after{display:none}
+  }
+
+  /* portraits */
+  .portrait{margin:48px 0 0;aspect-ratio:4/3;max-width:420px;border:1px dashed var(--ardoise);display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .portrait.large{max-width:none;aspect-ratio:3/2;margin-top:0}
+  .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+  .portrait span{font-weight:400;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--texte-doux)}
+  .portrait + h3{margin-top:20px}
+  .intertitre{text-align:center;font-weight:400;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--texte-doux);margin:64px 0 0;padding-top:40px;border-top:1px solid var(--ardoise)}
+  .intertitre + .portrait{margin-top:32px}
+
+  footer{border-top:1px solid var(--ardoise);text-align:center;padding:40px 24px 56px;font-weight:400;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--texte-doux)}
+  footer p{margin:6px 0}
+  main p:not([class]){text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+  nav.haut{display:flex;align-items:center;gap:8px 16px;padding:0 16px;flex-wrap:wrap}
+  nav.haut ul{flex:1 1 auto;padding:14px 0}
+  .retour-col{background:#C0295E;color:#FFF3DC;padding:6px 12px;border-radius:3px;font-weight:400;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+  .retour-col:hover{color:#fff}
+  .hero .retour-col{position:absolute;top:14px;left:14px;z-index:2}
+  @media (max-aspect-ratio: 1/1){.hero{padding-top:calc(5vh + 34px)}}
+</style>
+</head>
+<body>
+
+<nav class="haut" aria-label="Sommaire">
+  <a class="retour-col" href="../projets.html">← Les projets</a>
+  <ul>
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#spectacle">Le spectacle</a></li>
+    <li><a href="#programme">Programme</a></li>
+    <li><a href="#ecouter">Écouter</a></li>
+    <li><a href="#voir">Voir</a></li>
+    <li><a href="#artistes">Les artistes</a></li>
+    <li><a href="#dates">Dates</a></li>
+    <li><a href="#accueillir">Accueillir Soleil noir</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+<section id="accueil" class="vue accueil">
+  <div class="hero" role="img" aria-label="Arches de pierre et lune dans la nuit — visuel de Soleil noir">
+    <a class="retour-col" href="../projets.html">← Les projets</a>
+    <p class="h-ensemble">Les Murmures de Lou</p>
+    <span class="h-trait" aria-hidden="true"></span>
+    <div class="h-titre">
+      <h1>Soleil noir</h1>
+      <span class="h-trait" aria-hidden="true"></span>
+      <p class="h-sous">Requiem et poèmes de Verlaine</p>
+      <p class="h-credit">Musique originale de Samuel Zaroukian</p>
+    </div>
+    <nav class="menu-hero" aria-label="Menu principal">
+      <ul>
+        <li><a href="#spectacle">Le spectacle</a></li>
+        <li><a href="#programme">Programme</a></li>
+        <li><a href="#ecouter">Écouter</a></li>
+        <li><a href="#voir">Voir</a></li>
+        <li><a href="#artistes">Les artistes</a></li>
+        <li><a href="#dates">Dates</a></li>
+        <li><a href="#accueillir">Accueillir Soleil noir</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<section id="spectacle" class="vue">
+  <h2>Soleil noir</h2>
+  <p class="surtitre">Requiem et poèmes de Verlaine</p>
+
+  <blockquote>
+    Ma seule étoile est morte, et mon luth constellé<br>
+    porte le soleil noir de la mélancolie.
+    <cite>Gérard de Nerval, El Desdichado</cite>
+  </blockquote>
+
+  <h3>L'ensemble</h3>
+  <p>Les Murmures de Lou est un ensemble vocal de femmes créé pour chanter les compositions de Samuel Zaroukian, écrites à partir d'un texte, d'un air, d'un poème. Il porte le prénom de sa fille. Ce nom d'enfant, donné à un chœur, contenait déjà l'ouvrage : dire la vie, c'est dire un cycle, et nommer une naissance, c'est convoquer du même geste ce qui la borne. Le temps qui passe est la seule chose que la vie et la mort ont en commun. Un requiem est venu de là.</p>
+
+  <h3>Le projet</h3>
+  <p>2 choses touchent Samuel depuis longtemps : la messe des morts et les poèmes de Verlaine. Les réunir était le projet. Les 2 parlent de la même chose — de la lumière et du son : <em>de la musique avant toute chose</em> d'un côté, et de l'autre une liturgie qui ne demande rien qu'une clarté. Le latin est une parole collective, et c'est une langue morte ; le français est une voix seule, et c'est une langue vivante. À chaque prière du chœur, une voix répond autrement.</p>
+
+  <h3>Ce qu'il raconte</h3>
+  <p class="exergue">« Aucune de ces pièces n'est entièrement dans l'ombre, aucune n'est entièrement dans la lumière ; c'est le passage de l'une à l'autre qui fait l'ouvrage. »</p>
+  <p>La mort suspend le temps et pose les questions du fond. Ce n'est pas le deuil que le spectacle cherche, c'est cette profondeur-là : une veillée d'1h20, un répit.</p>
+</section>
+
+<section id="programme" class="vue">
+  <h2>Programme</h2>
+  <p class="surtitre">16 pièces enchaînées sans interruption · environ 1h20</p>
+  <ol class="programme">
+    <li class="sans-n"><span>Exergue — <span class="verlaine">El Desdichado</span>, Gérard de Nerval</span><span class="eff">dit dans le noir</span></li>
+    <li><span>Prélude</span><span class="eff">piano</span></li>
+    <li><span class="latin">Introït et Kyrie</span><span class="eff">chœur et baryton</span></li>
+    <li><span><span class="verlaine">Un grand sommeil noir</span><span class="attacca">attacca</span></span><span class="eff">chœur</span></li>
+    <li><span class="verlaine">Chanson d'automne</span><span class="eff">baryton et chœur</span></li>
+    <li><span class="verlaine">Soleils couchants</span><span class="eff">chœur et baryton</span></li>
+    <li><span class="verlaine">Fog !</span><span class="eff">duo et chœur</span></li>
+    <li><span class="verlaine">En sourdine</span><span class="eff">duo mezzo et baryton</span></li>
+    <li><span class="latin">Sanctus</span><span class="eff">chœur et baryton</span></li>
+    <li><span><span class="verlaine">Je ne sais pourquoi</span><span class="attacca">attacca</span></span><span class="eff">duo et chœur</span></li>
+    <li><span class="verlaine">La saison qui s'avance</span><span class="eff">mezzo</span></li>
+    <li><span class="latin">Agnus Dei</span><span class="eff">chœur et baryton</span></li>
+    <li><span class="verlaine">Marine</span><span class="eff">chœur</span></li>
+    <li><span><span class="latin">Lacrimosa</span><span class="attacca">attacca</span></span><span class="eff">chœur et baryton</span></li>
+    <li><span class="verlaine">Le ciel est par-dessus le toit</span><span class="eff">chœur</span></li>
+    <li><span class="verlaine">Nevermore</span><span class="eff">baryton, puis tous</span></li>
+    <li><span><span class="latin">In paradisum</span><span class="attacca">attacca</span></span><span class="eff">chœur a cappella, piano</span></li>
+  </ol>
+  <p class="note-prog"><span class="attacca" style="margin:0">attacca</span> : enchaîné directement, sans silence.</p>
+  <p class="note-prog">Textes de Paul Verlaine et de la messe des morts. Musique originale de Samuel Zaroukian.</p>
+</section>
+
+<section id="ecouter" class="vue">
+  <h2>Écouter</h2>
+  <ul class="sons" id="liste-sons"></ul>
+</section>
+
+<section id="voir" class="vue section-large">
+  <h2>Voir</h2>
+  <h3 style="text-align:center;margin-top:0">Vidéos</h3>
+  <div class="videos" id="liste-videos" style="max-width:680px;margin:24px auto 56px"></div>
+  <h3 style="text-align:center">Photos</h3>
+  <div class="photos" id="liste-photos" style="margin-top:24px"></div>
+</section>
+
+<section id="artistes" class="vue">
+  <h2>Les artistes</h2>
+  <p class="surtitre">Un chœur de femmes et 2 solistes</p>
+
+  <figure class="portrait large" style="border:0"><img src="../img/murmures-de-lou.jpg" alt="Les Murmures de Lou chantent dans une tribune d'église, sous une rosace, tout de blanc vêtues"></figure>
+  <h3>Les Murmures de Lou</h3>
+  <p class="role">Chœur de femmes</p>
+  <p>Ensemble vocal de femmes fondé en 2025 par Samuel Zaroukian pour chanter ses créations. Ses chanteuses, réparties en 3 pupitres, donnent à Soleil noir sa couleur : un son sombre, chaud et feutré, qui chante sans amplification et laisse la pierre faire le reste. L'ensemble répète au temple de Cournonsec, où il a donné son premier concert en juillet 2026.</p>
+
+  <p class="intertitre">2 solistes, 2 professionnels, à la tête du projet</p>
+
+  <figure class="portrait"><span>Photo à venir</span></figure>
+
+  <h3>Samuel Zaroukian</h3>
+  <p class="role">Composition, direction musicale, baryton solo</p>
+  <p>Pianiste, baryton, chef de chœur et compositeur, Samuel Zaroukian dirige des ensembles vocaux depuis 30 ans. Il enseigne le chant aux comédiens au Conservatoire de Montpellier et anime des formations au doublage. Il codirige le Collectif 22h13min avec Amélie Zaroukian et a fondé Les Murmures de Lou pour chanter ses propres compositions. Sa musique est dépouillée, dans le sillage de Max Richter et d'Arvo Pärt : elle cherche dans l'ombre sa part de lumière. Il met en musique les poèmes de Verlaine, qu'il fréquente de longue date.</p>
+
+  <figure class="portrait"><span>Photo à venir</span></figure>
+  <h3>Amélie Zaroukian</h3>
+  <p class="role">Mezzo-soprano solo, scénographie</p>
+  <p>Chanteuse mezzo-soprano, comédienne et metteuse en scène, Amélie Zaroukian a un parcours qui mêle le chant, le théâtre, la danse et l'écriture. Formée en arts du spectacle et en sciences de l'éducation à l'université Paul-Valéry de Montpellier, elle partage son travail entre la mise en scène et l'enseignement du théâtre. Guide du patrimoine et médiatrice culturelle dans l'Hérault, elle connaît de l'intérieur les lieux où Soleil noir veut être donné. Elle codirige le Collectif 22h13min.</p>
+
+  <h3>La scénographie</h3>
+  <p>Une scénographie simple, faite de jeux d'ombres et de lumières, signée Amélie Zaroukian.</p>
+</section>
+
+<section id="dates" class="vue">
+  <h2>Dates</h2>
+  <div class="date">
+    <p class="j">Prochaines dates</p>
+    <p class="l">Bientôt annoncées</p>
+    <p class="e">Saison 2026-2027</p>
+  </div>
+  <div class="passees">
+    <h3>Déjà donné</h3>
+    <ul>
+      <li>Samedi 19 septembre 2026 — église de Cournonsec, Journées du patrimoine (extraits : <em>Marine</em>, <em>Soleils couchants</em>, <em>Chanson d'automne</em>)</li>
+      <li>Samedi 4 juillet 2026 — temple de Cournonsec, premier concert des Murmures de Lou</li>
+    </ul>
+  </div>
+</section>
+
+<section id="accueillir" class="vue">
+  <h2>Accueillir Soleil noir</h2>
+  <p><em>Soleil noir</em> est conçu pour la pierre. Le projet ne s'adapte pas au lieu : il en naît. L'acoustique fait partie de l'écriture, et une église, une chapelle, un temple, un chai, une cave de château sont des lieux où des vies se sont succédé — y donner ce spectacle, c'est les faire résonner, au sens propre comme au figuré. Le lieu n'est pas un décor, il est co-auteur de la soirée.</p>
+  <p>Pour une commune, c'est l'occasion d'ouvrir un espace souvent fermé et d'offrir une soirée rare : profonde sans être austère, exigeante sans être élitiste. L'ambition est double — donner une création originale, et mettre en valeur le patrimoine de ceux qui nous accueillent.</p>
+
+  <h3>En pratique</h3>
+  <dl class="pratique">
+    <dt>Durée</dt><dd>16 pièces enchaînées sans interruption, environ 1h20</dd>
+    <dt>Formation</dt><dd>Chœur de femmes, 2 solistes — mezzo-soprano et baryton — et piano</dd>
+    <dt>Musique</dt><dd>Musique originale de Samuel Zaroukian</dd>
+    <dt>Jauge</dt><dd>De 60 à 200 personnes selon le lieu</dd>
+    <dt>Lieux</dt><dd>Église, chapelle, temple, chai, cave ou salon de château</dd>
+    <dt>Autonomie</dt><dd>Spectacle autonome en son et en lumière : nous venons avec notre matériel.</dd>
+    <dt>Technique</dt><dd>Dispositif léger et nomade : un piano ou un clavier, 2 micros pour les solistes, le chœur sans amplification. La lumière reste basse d'un bout à l'autre.</dd>
+  </dl>
+</section>
+
+<section id="contact" class="vue contact">
+  <h2>Contact</h2>
+  <div class="bloc">
+    <p class="nom"><a href="../index.html" style="color:inherit;text-decoration:none">Collectif 22h13min</a></p>
+    <p class="role">Production · Cournonterral, Hérault</p>
+    <p class="coord"><a href="mailto:22h13min@gmail.com">22h13min@gmail.com</a></p>
+    <button class="copier" type="button" data-copie="22h13min@gmail.com">Copier l'adresse</button>
+  </div>
+</section>
+
+</main>
+
+<div class="visionneuse" id="visionneuse" role="dialog" aria-modal="true" aria-label="Photo">
+  <button type="button" id="fermer">Fermer</button>
+  <img id="vis-img" alt="">
+  <p id="vis-legende"></p>
+</div>
+
+<footer>
+  <p>Soleil noir · Les Murmures de Lou</p>
+  <p>Une production du <a href="../index.html" style="color:inherit">Collectif 22h13min</a> · <a href="../index.html" style="color:inherit">22h13.fr</a></p>
+</footer>
+
+<script>
+  /* ====== MÉDIAS : il suffit de remplir ces 3 listes ======
+     Les fichiers (mp3, mp4, jpg) sont rangés à côté de la page, dans le dossier medias/.
+     sons   : { titre, details, fichier }            ex. fichier: "medias/marine.mp3"
+     videos : { titre, details, fichier }            vidéo courte hébergée ici (20 Mo maximum)
+           ou { titre, details, lien }               vidéo sur YouTube ou Vimeo (lien externe)
+     photos : { fichier, legende, credit }           ex. fichier: "medias/cournonsec-1.jpg"
+  */
+  var MEDIAS = {
+    sons: [],
+    videos: [],
+    photos: []
+  };
+
+  function el(tag, attrs, text) {
+    var e = document.createElement(tag);
+    for (var k in (attrs || {})) e.setAttribute(k, attrs[k]);
+    if (text) e.textContent = text;
+    return e;
+  }
+  function vide(conteneur, texte, tag) {
+    conteneur.appendChild(el(tag || 'p', { 'class': 'vide' }, texte));
+  }
+
+  var ls = document.getElementById('liste-sons');
+  if (!MEDIAS.sons.length) vide(ls, 'Les premiers extraits arrivent avec les enregistrements de la saison.', 'li');
+  MEDIAS.sons.forEach(function (s) {
+    var li = el('li');
+    li.appendChild(el('p', { 'class': 't' }, s.titre));
+    if (s.details) li.appendChild(el('p', { 'class': 'd' }, s.details));
+    var a = el('audio', { controls: '', preload: 'none', src: s.fichier });
+    li.appendChild(a); ls.appendChild(li);
+  });
+  document.addEventListener('play', function (e) {
+    document.querySelectorAll('audio, video').forEach(function (m) { if (m !== e.target) m.pause(); });
+  }, true);
+
+  var lv = document.getElementById('liste-videos');
+  if (!MEDIAS.videos.length) vide(lv, 'Vidéos à venir.');
+  MEDIAS.videos.forEach(function (v) {
+    if (v.lien) {
+      var a = el('a', { 'class': 'lien', href: v.lien, target: '_blank', rel: 'noopener' }, v.titre + ' ↗');
+      if (v.details) a.appendChild(el('span', null, v.details));
+      lv.appendChild(a); return;
+    }
+    var f = el('figure');
+    f.appendChild(el('video', { controls: '', preload: 'metadata', src: v.fichier, playsinline: '' }));
+    f.appendChild(el('figcaption', null, v.titre + (v.details ? ' — ' + v.details : '')));
+    lv.appendChild(f);
+  });
+
+  var lp = document.getElementById('liste-photos');
+  if (!MEDIAS.photos.length) { lp.style.display = 'block'; lp.style.maxWidth = '680px'; lp.style.margin = '24px auto 0'; vide(lp, 'Photos à venir.'); }
+  var vis = document.getElementById('visionneuse'), visImg = document.getElementById('vis-img'), visLeg = document.getElementById('vis-legende');
+  MEDIAS.photos.forEach(function (p) {
+    var f = el('figure'), b = el('button', { type: 'button', 'aria-label': 'Agrandir : ' + (p.legende || 'photo') });
+    var txt = (p.legende || '') + (p.credit ? ' · Photo : ' + p.credit : '');
+    b.appendChild(el('img', { src: p.fichier, alt: p.legende || '', loading: 'lazy' }));
+    b.addEventListener('click', function () { visImg.src = p.fichier; visImg.alt = p.legende || ''; visLeg.textContent = txt; vis.classList.add('ouverte'); document.getElementById('fermer').focus(); });
+    f.appendChild(b);
+    if (txt) f.appendChild(el('figcaption', null, txt));
+    lp.appendChild(f);
+  });
+  function fermer() { vis.classList.remove('ouverte'); visImg.src = ''; }
+  document.getElementById('fermer').addEventListener('click', fermer);
+  vis.addEventListener('click', function (e) { if (e.target === vis) fermer(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermer(); });
+</script>
+<script>
+  document.querySelectorAll('.copier').forEach(function (b) {
+    var label = b.textContent;
+    b.addEventListener('click', function () {
+      var ok = function () { b.textContent = 'Copié'; setTimeout(function () { b.textContent = label; }, 1600); };
+      try {
+        navigator.clipboard.writeText(b.dataset.copie).then(ok, function () { b.textContent = b.dataset.copie; });
+      } catch (e) { b.textContent = b.dataset.copie; }
+    });
+  });
+</script>
+<script>
+  /* ====== navigation par pages ====== */
+  (function () {
+    var vues = Array.prototype.slice.call(document.querySelectorAll('.vue'));
+    var ordre = vues.map(function (v) { return v.id; });
+    var noms = {};
+    document.querySelectorAll('nav.haut a').forEach(function (a) { noms[a.getAttribute('href').slice(1)] = a.textContent; });
+    // liens « précédent / suivant » en bas de chaque page (sauf l'accueil)
+    vues.forEach(function (v, i) {
+      if (v.id === 'accueil') return;
+      var d = document.createElement('div'); d.className = 'suite';
+      var p = ordre[i - 1], n = ordre[i + 1];
+      var ap = document.createElement('a'); ap.href = '#' + p; ap.textContent = '← ' + (noms[p] || '');
+      var an = document.createElement('a');
+      if (n) { an.href = '#' + n; an.textContent = (noms[n] || '') + ' →'; } else { an.className = 'vide-lien'; an.textContent = '.'; }
+      d.appendChild(ap); d.appendChild(an); v.appendChild(d);
+    });
+    function afficher() {
+      var id = (location.hash || '').slice(1);
+      if (ordre.indexOf(id) < 0) id = 'accueil';
+      vues.forEach(function (v) { v.classList.toggle('active', v.id === id); });
+      document.querySelectorAll('nav.haut a').forEach(function (a) {
+        if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+      });
+      document.querySelectorAll('audio, video').forEach(function (m) { m.pause(); });
+      document.body.classList.toggle('sur-accueil', id === 'accueil');
+      window.scrollTo(0, 0); setTimeout(function () { window.scrollTo(0, 0); }, 0);
+      document.title = (id === 'accueil' ? '' : (noms[id] + ' — ')) + 'Soleil noir — Les Murmures de Lou';
+    }
+    window.addEventListener('hashchange', afficher);
+    afficher();
+  })();
+</script>
+</body>
+</html>

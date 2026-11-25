@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Re]trace — visites patrimoniales théâtralisées</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Archivo+Black&family=Nunito:ital,wght@0,400;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box} html,body{margin:0}
+body{min-height:100svh;display:flex;flex-direction:column;font-size:17px;line-height:1.6}
+img{display:block;max-width:100%}
+nav.haut{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 22px;flex-wrap:wrap}
+nav.haut .col{font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;opacity:.8;white-space:nowrap}
+nav.haut ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;flex-wrap:wrap}
+nav.haut ul a{text-decoration:none;font-size:14px;letter-spacing:.08em;opacity:.75}
+nav.haut ul a[aria-current]{opacity:1;border-bottom:2px solid currentColor}
+main{flex:1 1 auto;display:flex;flex-direction:column}
+.vue{display:none;flex:1 1 auto;flex-direction:column}
+.vue.active{display:flex}
+.vue .dedans{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;width:100%;max-width:960px;margin:0 auto;padding:34px 24px}
+.suite{display:flex;justify-content:space-between;max-width:960px;width:100%;margin:0 auto;padding:12px 24px 18px}
+.suite a{text-decoration:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.8}
+.suite .vide{visibility:hidden}
+body.sur-accueil nav.haut{display:none}
+.vue.accueil .dedans{max-width:none;padding:0}
+.menu{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.menu a{text-decoration:none;padding:9px 18px;border-radius:30px;font-size:14px;letter-spacing:.06em}
+.a-venir{border:1px dashed currentColor;opacity:.7;border-radius:10px;padding:22px;text-align:center;font-size:15px}
+.infos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0;padding:0;list-style:none}
+.infos li{padding:14px 16px;border-radius:10px}
+.infos b{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:2px}
+.pied-col{display:block;text-align:center;font-size:12px;margin-top:20px;opacity:.75}
+@media(max-width:640px){.infos{grid-template-columns:1fr}nav.haut{padding:8px 14px}nav.haut ul{gap:12px}nav.haut ul a{font-size:13px}.vue .dedans{padding:22px 18px}}
+
+
+ body{background:#A7C9C7;color:#17323A;font-family:'Nunito',sans-serif;font-size:18px}
+ nav.haut{background:#2D6874} nav.haut a{color:#FFF0C4}
+ nav.haut ul a[aria-current]{color:#FFBD31;border-color:#FFBD31}
+ h1,h2{font-family:'Luckiest Guy',cursive;font-weight:400;color:#2D6874;letter-spacing:.03em;margin:0 0 14px;text-shadow:3px 3px 0 #FFFFFF}
+ h2{font-size:38px;line-height:1.1;display:inline-block;align-self:flex-start;border-bottom:5px solid #FFBD31;padding-bottom:2px}
+ .hero{position:relative;flex:1;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#A7C9C7}
+ .hero .band{position:absolute;left:0;bottom:0;width:100%;height:min(40vh,480px);object-fit:cover;object-position:center bottom;max-width:none;pointer-events:none;z-index:1;-webkit-mask-image:linear-gradient(transparent,#000 22%);mask-image:linear-gradient(transparent,#000 22%)}
+ .hero .pise{position:absolute;top:-2%;left:3%;width:clamp(90px,13vw,190px);transform:rotate(-28deg);pointer-events:none}
+ .hero .minaret{position:absolute;top:-4%;right:4%;width:clamp(70px,10vw,140px);transform:rotate(168deg);pointer-events:none}
+ .hero .pise2{position:absolute;top:30%;right:-2%;width:clamp(70px,9vw,130px);transform:rotate(62deg) scaleX(-1);pointer-events:none}
+ .soleil{position:absolute;left:50%;top:40%;width:min(92vw,600px);aspect-ratio:1;border-radius:50%;background:#FFFFFF;opacity:.45;transform:translate(-50%,-50%);z-index:0}
+ .cartouche{position:relative;z-index:2;max-width:600px;margin:0 16px 22vh;background:#FFBD31;border:5px solid #FFFFFF;border-radius:6px;padding:26px 22px 24px;transform:rotate(-1.5deg);box-shadow:8px 8px 0 #2D6874}
+ .hero h1{font-size:clamp(58px,12vw,112px);line-height:.95;border:0;color:#FFFFFF;text-shadow:5px 5px 0 #2D6874,-2px -2px 0 #2D6874,2px -2px 0 #2D6874,-2px 2px 0 #2D6874}
+ .hero p{margin:8px 0 0;font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:clamp(15px,2.2vw,20px);color:#2D6874;letter-spacing:.02em}
+ .hero p.petit{font-family:'Nunito',sans-serif;text-transform:none;font-weight:800;font-size:17px;margin-top:6px;color:#17323A}
+ .menu a{background:#2D6874;color:#FFFFFF;font-family:'Archivo Black',sans-serif;font-size:14px;border-radius:30px;border:2px solid #2D6874;transition:transform .15s}
+ .menu a:nth-child(odd){transform:rotate(-3deg)} .menu a:nth-child(even){transform:rotate(2deg)}
+ .menu a:hover{transform:rotate(0) scale(1.06);background:#17323A}
+ .infos li{background:rgba(255,255,255,.6);border-left:5px solid #FFBD31;border-radius:6px} .infos b{font-family:'Archivo Black',sans-serif;color:#2D6874;font-size:13px}
+ .suite a,.pied-col{color:#2D6874}
+ a{color:#2D6874}
+
+ .vue:not(.accueil) p:not([class]){text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+ nav.haut .col,.retour-col{background:#C0295E;color:#FFF3DC!important;opacity:1;padding:6px 12px;border-radius:3px;font-family:Arial,sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+ .accroche{font-family:'Archivo Black',sans-serif;font-size:22px;color:#2D6874;margin:0 0 10px}
+ .credit{font-style:italic;font-size:15px;color:#2D6874;margin-top:14px}
+ .galerie{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+ .galerie figure{margin:0}
+ .galerie figure:nth-child(odd) img{transform:rotate(-1.5deg)} .galerie figure:nth-child(even) img{transform:rotate(1.5deg)}
+ .galerie img{width:100%;aspect-ratio:4/5;object-fit:cover;border:5px solid #FFFFFF;box-shadow:4px 4px 0 #FFBD31}
+ .galerie figcaption{font-size:14px;color:#17323A;margin-top:8px;text-align:center}
+ @media(max-width:640px){.galerie{grid-template-columns:1fr 1fr}.hero .pise2{display:none}.cartouche{margin-bottom:26vh}.hero .band{height:34vh}}
+ .teaser{position:relative;width:100%;aspect-ratio:16/9;background:#2D6874;border:5px solid #FFFFFF;box-shadow:6px 6px 0 #FFBD31;margin:6px 0}
+ .teaser iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+ .yt{display:inline-block;margin-top:12px;font-size:15px;color:#2D6874}
+ .retour-col{position:absolute;top:14px;left:14px;z-index:5}
+ nav.haut{position:relative;justify-content:center;min-height:52px}
+ nav.haut ul{justify-content:center;gap:10px 26px} nav.haut ul a{font-size:16px;opacity:.9}
+ nav.haut .col{position:absolute;left:22px;top:50%;transform:translateY(-50%)}
+ @media(max-width:900px){nav.haut{flex-direction:column;gap:8px;padding:10px 14px}nav.haut .col{position:static;transform:none;align-self:flex-start}}
+</style>
+</head>
+<body>
+<nav class="haut"><a class="col" href="../projets.html">← Les projets</a><ul><li><a href="#accueil">Accueil</a></li><li><a href="#projet">Le projet</a></li><li><a href="#editions">Les éditions</a></li><li><a href="#images">Images</a></li><li><a href="#venir">Faire venir [Re]trace</a></li></ul></nav>
+<main>
+<section id="accueil" class="vue accueil"><div class="dedans"><div class="hero"><a class="retour-col" href="../projets.html">← Les projets</a><img class="pise" src="pise.webp" alt=""><img class="minaret" src="minaret.webp" alt=""><img class="pise2" src="pise.webp" alt=""><div class="soleil"></div><img class="band" src="monuments.webp" alt=""><div class="cartouche"><h1>[Re]trace</h1><p>Visites théâtralisées du patrimoine, sur mesure</p><p class="petit">1h30 où une commune se met à parler</p><div class="menu"><a href="#projet">Le projet</a><a href="#editions">Les éditions</a><a href="#images">Images</a><a href="#venir">Faire venir [Re]trace</a></div></div></div></div></section>
+<section id="projet" class="vue"><div class="dedans"><h2>Le projet</h2><p class="accroche">1h30 où une commune se met à parler.</p><p>Amélie Zaroukian et son complice Tom Poignon écrivent pour un territoire : pour ses pierres, ses ombres, ses figures oubliées. Puis ils confient ses voix à des comédiens amateurs volontaires, des habitants devenus passeurs de leur propre histoire.</p><p>Une écriture originale pour chaque commune. Rien n'est recyclé : chaque pierre mérite ses mots à elle.</p><ul class="infos" style="margin-top:18px"><li><b>Forme</b>Visite théâtralisée du patrimoine</li><li><b>Durée</b>1h30</li><li><b>Écriture</b>Originale, pour chaque commune</li><li><b>Jeu</b>Comédiens amateurs volontaires, habitants de la commune</li></ul><p class="credit">Une création d'Amélie Zaroukian et Tom Poignon · Collectif 22h13min</p></div></section><section id="editions" class="vue"><div class="dedans"><h2>Les éditions</h2><ul class="infos"><li><b>Poussan · 2026 · <i>Fragments d'époques</i></b>Jeudi 16 juillet (19h et 21h), jeudi 20 août (19h et 21h), dimanche 20 septembre (17h), dimanche 22 novembre. Un scénario qui mêle patrimoine, théâtre et science-fiction, avec les comédiens de la Compagnie du Strapontin.</li><li><b>Cournonsec · 2026 · <i>Autochtones</i></b>Samedi 19 septembre, 10h30.</li><li><b>Poussan · 2025</b>Jeudi 10 juillet (19h et 21h), jeudi 7 août (19h et 21h), dimanche 21 septembre (17h), avec les comédiens de la Compagnie du Strapontin.</li><li><b>Cournonterral · 2024</b>Journées européennes du patrimoine</li><li><b>Cournonterral · 2023</b>Journées européennes du patrimoine</li><li><b>Mèze · 2022</b>Première édition</li></ul><p class="credit" style="margin-top:12px">Écriture et mise en rue : Amélie Zaroukian</p><blockquote style="margin:26px 0 0;padding:18px 22px;background:rgba(255,255,255,.6);border-left:5px solid #FFBD31;border-radius:6px"><p style="margin:0;font-family:'Archivo Black',sans-serif;font-size:20px;color:#2D6874;text-align:left">« Fragments d'époques, un voyage théâtral à travers le temps »</p><cite style="display:block;margin-top:6px;font-size:15px;color:#17323A">Midi Libre, 12 juillet 2026 · Poussan</cite></blockquote><ul style="list-style:none;margin:14px 0 0;padding:0;font-size:16px;color:#17323A"><li style="margin:6px 0">« Réussite totale pour la première visite théâtralisée » <span style="color:#2D6874">· Poussan</span></li><li style="margin:6px 0">« Les visites théâtralisées ont séduit le public » <span style="color:#2D6874">· Poussan</span></li><li style="margin:6px 0">« Un spectacle qui va allier pédagogie et burlesque » <span style="color:#2D6874">· Poussan</span></li></ul></div></section><section id="images" class="vue"><div class="dedans"><h2>Images</h2><div class="teaser"><iframe src="https://www.youtube-nocookie.com/embed/-oSfixT5o1A?rel=0" title="[Re]trace — vidéo" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="credit" style="margin:8px 0 0">Captation : Corinne Gomez</p><a class="yt" href="https://youtu.be/-oSfixT5o1A" target="_blank" rel="noopener">Voir la vidéo sur YouTube ↗</a><div class="galerie"><figure><img src="visite-cadre.jpg" alt="Tom Poignon et Amélie Zaroukian en visite, face à un personnage en robe dorée dans un cadre" loading="lazy"><figcaption>En visite, au détour d'une ruelle</figcaption></figure><figure><img src="visite-remparts.jpg" alt="Charles-Henry et Véro racontent l'histoire du village au pied d'un mur de pierre, entourés du public" loading="lazy"><figcaption>Au pied des vieilles pierres</figcaption></figure><figure><img src="visite-halles.jpg" alt="Une foule rassemblée devant les halles de Poussan pour le départ d'une visite" loading="lazy"><figcaption>Le départ, devant les halles de Poussan</figcaption></figure><figure><img src="visite-beret.jpg" alt="Tom Poignon en béret, aux côtés d'une comédienne au turban orange" loading="lazy"><figcaption>Tom Poignon, en pleine scène</figcaption></figure><figure><a href="affiche.jpg" target="_blank" rel="noopener"><img src="affiche.jpg" alt="Affiche [Re]traces : visite théâtrale de votre patrimoine" loading="lazy"></a><figcaption>L'affiche</figcaption></figure><figure><img src="visite-public.jpg" alt="Le public d'une visite rassemblé sous les arbres d'une place de village" loading="lazy"><figcaption>Le public, sur la place</figcaption></figure><figure><img src="visite-rue.jpg" alt="Amélie Zaroukian raconte l'histoire d'une façade de pierre aux visiteurs" loading="lazy"><figcaption>Dans les ruelles</figcaption></figure><figure><img src="visite-garrigue.jpg" alt="Amélie Zaroukian et un comédien en pleine scène, dans la garrigue" loading="lazy"><figcaption>Dans la garrigue</figcaption></figure><figure><img src="charles-henry-et-vero.jpg" alt="Charles-Henry et Véro, les 2 personnages de [Re]trace" loading="lazy"><figcaption>Charles-Henry et Véro débarquent chez vous !</figcaption></figure></div></div></section><section id="venir" class="vue"><div class="dedans"><h2>Faire venir [Re]trace</h2><p class="accroche">Quelle sera la prochaine ?</p><p>Une commune, une association, un lieu chargé d'histoire ? [Re]trace s'écrit pour chaque territoire. Écrivez au Collectif : <b><a href="mailto:22h13min@gmail.com" style="color:inherit">22h13min@gmail.com</a></b>.</p><a class="pied-col" href="../index.html">Collectif 22h13min · 22h13.fr</a></div></section>
+</main>
+
+<script>
+(function(){
+  var vues=[].slice.call(document.querySelectorAll('.vue')), ordre=vues.map(function(v){return v.id}), noms={};
+  document.querySelectorAll('nav.haut ul a').forEach(function(a){noms[a.getAttribute('href').slice(1)]=a.textContent});
+  vues.forEach(function(v,i){ if(v.id==='accueil')return;
+    var d=document.createElement('div');d.className='suite';var p=ordre[i-1],n=ordre[i+1];
+    var ap=document.createElement('a');ap.href='#'+p;ap.textContent='← '+(p==='accueil'?'Accueil':noms[p]);
+    var an=document.createElement('a');if(n){an.href='#'+n;an.textContent=noms[n]+' →'}else{an.className='vide';an.textContent='.'}
+    d.appendChild(ap);d.appendChild(an);v.appendChild(d)});
+  function afficher(){var id=(location.hash||'').slice(1);if(ordre.indexOf(id)<0)id='accueil';
+    vues.forEach(function(v){v.classList.toggle('active',v.id===id)});
+    document.querySelectorAll('nav.haut ul a').forEach(function(a){if(a.getAttribute('href')==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    document.body.classList.toggle('sur-accueil',id==='accueil');window.scrollTo(0,0)}
+  addEventListener('hashchange',afficher);afficher();
+})();
+</script>
+
+</body>
+</html>

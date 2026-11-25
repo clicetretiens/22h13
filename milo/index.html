@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>En chemin, Milo — théâtre d'objets pour les tout-petits</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box} html,body{margin:0}
+body{min-height:100svh;display:flex;flex-direction:column;font-size:17px;line-height:1.6}
+img{display:block;max-width:100%}
+nav.haut{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 22px;flex-wrap:wrap}
+nav.haut .col{font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;opacity:.8;white-space:nowrap}
+nav.haut ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;flex-wrap:wrap}
+nav.haut ul a{text-decoration:none;font-size:14px;letter-spacing:.08em;opacity:.75}
+nav.haut ul a[aria-current]{opacity:1;border-bottom:2px solid currentColor}
+main{flex:1 1 auto;display:flex;flex-direction:column}
+.vue{display:none;flex:1 1 auto;flex-direction:column}
+.vue.active{display:flex}
+.vue .dedans{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;width:100%;max-width:960px;margin:0 auto;padding:34px 24px}
+.suite{display:flex;justify-content:space-between;max-width:960px;width:100%;margin:0 auto;padding:12px 24px 18px}
+.suite a{text-decoration:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.8}
+.suite .vide{visibility:hidden}
+body.sur-accueil nav.haut{display:none}
+.vue.accueil .dedans{max-width:none;padding:0}
+.menu{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.menu a{text-decoration:none;padding:9px 18px;border-radius:30px;font-size:14px;letter-spacing:.06em}
+.a-venir{border:1px dashed currentColor;opacity:.7;border-radius:10px;padding:22px;text-align:center;font-size:15px}
+.infos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0;padding:0;list-style:none}
+.infos li{padding:14px 16px;border-radius:10px}
+.infos b{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:2px}
+.pied-col{display:block;text-align:center;font-size:12px;margin-top:20px;opacity:.75}
+@media(max-width:640px){.photos-milo{grid-template-columns:1fr}.infos{grid-template-columns:1fr}nav.haut{padding:8px 14px}nav.haut ul{gap:12px}nav.haut ul a{font-size:13px}.vue .dedans{padding:22px 18px}}
+
+ body{background:#FBF3E6;color:#4A3B33;font-family:'Nunito',sans-serif}
+ nav.haut{background:#F6D3B2} nav.haut a{color:#6B4E3F}
+ h1,h2{font-family:'Fredoka',sans-serif;font-weight:600;color:#C2603A;margin:0 0 12px}
+ h2{font-size:34px}
+ .hero{position:relative;flex:1;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:linear-gradient(#F6B48A,#F8D3AE 45%,#FBF3E6)}
+ .soleil{position:absolute;top:10%;right:14%;width:90px;height:90px;border-radius:50%;background:#FFE19A;box-shadow:0 0 0 14px rgba(255,225,154,.35)}
+ .colline{position:absolute;bottom:-50px;border-radius:50%}
+ .c1{left:-10%;width:70%;height:210px;background:#A9C79A}.c2{right:-12%;width:75%;height:250px;background:#8BB27F}
+ .chemin{position:absolute;bottom:0;left:50%;width:130px;height:180px;transform:translateX(-50%);background:#F3D9A4;clip-path:polygon(42% 0,58% 0,100% 100%,0 100%)}
+ .hero-txt{position:relative;z-index:2;padding:0 20px;margin-bottom:110px}
+ .hero h1{font-size:clamp(44px,9vw,84px);line-height:1}
+ .hero p{font-size:clamp(17px,2.4vw,22px);margin:6px 0 0;color:#6B4E3F}
+ .badge{display:block;margin-top:12px;color:#C2603A;font-family:'Fredoka',sans-serif;font-weight:600;font-size:18px;letter-spacing:.04em}
+ .menu a{background:rgba(255,255,255,.85);color:#C2603A;font-family:'Fredoka',sans-serif;font-weight:500;box-shadow:0 3px 0 #E7B48F}
+ .infos li{background:#fff;box-shadow:0 3px 0 #EED9C2} .infos b{color:#7FA676}
+ .suite a,.pied-col{color:#9A7A66}
+ 
+ .vue:not(.accueil) p:not([class]){text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+ nav.haut .col,.retour-col{background:#C0295E;color:#FFF3DC!important;opacity:1;padding:6px 12px;border-radius:3px;font-family:Arial,sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+ .accroche{font-family:'Fredoka',sans-serif;font-weight:500;font-size:20px;color:#C2603A;line-height:1.45}
+ .credit{font-size:14px;color:#9A7A66;font-style:italic}
+ .photos-milo{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+ .photo-milo{margin:0}
+ .photo-milo img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;box-shadow:0 4px 0 #EED9C2}
+ .photo-milo figcaption{text-align:center;font-size:14px;color:#9A7A66;margin-top:6px}
+ .presse{margin:22px 0 0;padding:14px 18px;background:#fff;border-left:4px solid #C2603A;border-radius:8px;font-family:'Fredoka',sans-serif;font-size:19px;color:#4A3B33}
+ .presse cite{display:block;margin-top:4px;font-family:'Nunito',sans-serif;font-style:normal;font-size:13px;color:#9A7A66}
+ .teaser{position:relative;width:100%;aspect-ratio:16/9;background:#4A3B33;border-radius:12px;overflow:hidden;box-shadow:0 4px 0 #EED9C2}
+ .teaser iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+ .yt{display:inline-block;margin-top:8px;font-size:14px;color:#C2603A}
+ .retour-col{position:absolute;top:14px;left:14px;z-index:5}
+ .hero{position:relative}
+ nav.haut{position:relative;justify-content:center;min-height:52px}
+ nav.haut ul{justify-content:center;gap:10px 26px} nav.haut ul a{font-size:16px;opacity:.9}
+ nav.haut .col{position:absolute;left:22px;top:50%;transform:translateY(-50%)}
+ @media(max-width:900px){nav.haut{flex-direction:column;gap:8px;padding:10px 14px}nav.haut .col{position:static;transform:none;align-self:flex-start}}
+ .hero{background:linear-gradient(#F6B48A,#F8D3AE 45%,#FBF3E6);align-items:flex-start}
+ .hero .photo{position:absolute;right:0;top:0;bottom:0;width:64%;background:url('lit-de-milo.jpg') 50% 35%/cover no-repeat;z-index:0;mix-blend-mode:multiply;filter:sepia(.2) saturate(1.1) contrast(.95);opacity:.95;-webkit-mask-image:radial-gradient(closest-side at 55% 46%,#000 52%,transparent 100%);mask-image:radial-gradient(closest-side at 55% 46%,#000 52%,transparent 100%)}
+ .hero .soleil{top:9%;right:auto;left:40%;z-index:1}
+ .hero .colline,.hero .chemin{z-index:1}
+ .hero .c1{width:62%;height:190px}
+ .hero .c2{width:60%;height:150px;opacity:.95}
+ .hero .chemin{left:44%}
+ .hero-txt{margin:0 0 60px 6vw;max-width:44%;text-align:left;z-index:2}
+ .hero-txt .menu{justify-content:flex-start}
+ @media(max-width:800px){
+  .hero{justify-content:flex-end;align-items:center}
+  .hero .photo{width:100%;bottom:auto;height:62%;background-position:30% 20%;-webkit-mask-image:radial-gradient(closest-side at 50% 45%,#000 55%,transparent 100%);mask-image:radial-gradient(closest-side at 50% 45%,#000 55%,transparent 100%)}
+  .hero .soleil{width:56px;height:56px;left:auto;right:8%;top:12%}
+  .hero .c1{width:80%;height:80px;bottom:-30px}
+  .hero .c2{width:80%;height:100px;bottom:-40px}
+  .hero .chemin{left:50%;width:70px;height:60px}
+  .hero-txt{margin:0 0 70px;max-width:none;text-align:center}
+  .hero-txt .menu{justify-content:center}
+ }
+</style>
+</head>
+<body>
+<nav class="haut"><a class="col" href="../projets.html">← Les projets</a><ul><li><a href="#accueil">Accueil</a></li><li><a href="#spectacle">Le spectacle</a></li><li><a href="#pratique">En pratique</a></li><li><a href="#images">Photos et vidéos</a></li><li><a href="#accueillir">Accueillir Milo</a></li></ul></nav>
+<main>
+<section id="accueil" class="vue accueil"><div class="dedans"><div class="hero"><a class="retour-col" href="../projets.html">← Les projets</a><div class="photo"></div><div class="soleil"></div><div class="colline c1"></div><div class="colline c2"></div><div class="chemin"></div>
+ <div class="hero-txt"><h1>En chemin, Milo</h1><p>Petit renard en vadrouille</p><p style="font-size:16px;margin-top:2px">Théâtre d'objets pour les tout-petits · un spectacle local et de saison</p><span class="badge">de 9 mois à 4 ans</span><div class="menu"><a href="#spectacle">Le spectacle</a><a href="#pratique">En pratique</a><a href="#images">Photos et vidéos</a><a href="#accueillir">Accueillir Milo</a></div></div></div></div></section>
+<section id="spectacle" class="vue"><div class="dedans"><h2>Le spectacle</h2><p class="accroche">Un petit renard curieux, 2 cagettes en bois, 4 saisons. 20 minutes pour une parenthèse d'éveil au spectacle, à hauteur d'enfant.</p><p>Milo se lève. Il part à l'aventure. Il rencontre des animaux, des paysages, des émotions. Il rentre, prend un bon bain, et dodo ! Chaque volet est construit comme un album jeunesse, en suivant la chronologie d'une journée pour intégrer la notion de rythme circadien.</p><p>Au travers d'une douce histoire, d'albums jeunesse, de chants a cappella, de bruitages et de manipulation d'objets, Amélie parle de la vie, du grandir et d'aimer grandir. Les animaux, les saisons et le temps de la journée offrent au tout-petit des repères rassurants : un moment tout en douceur au pays du conte imagé.</p><p>Le spectacle existe en 4 versions, printemps, été, automne et hiver, et Milo se joue à la saison réelle : un spectacle local et de saison, comme on cuisine. À la fin, les enfants viennent toucher le décor et découvrent qu'avec des petits riens mis bout à bout, on crée un univers.</p><p>Né pendant le confinement pour notre fille Lou, il a été rodé sur 20 dates en circuit informel. Aujourd'hui, il est prêt à voyager.</p><p class="credit">Création, mise en scène et jeu : Amélie Zaroukian<br>Musique : Samuel Zaroukian</p><blockquote class="presse">« Les bambins à la rencontre d'un univers poétique »<cite>Midi Libre, novembre 2023 · médiathèque Théodore-Monod, Juvignac</cite></blockquote></div></section><section id="pratique" class="vue"><div class="dedans"><h2>En pratique</h2><ul class="infos"><li><b>Âge</b>De 9 mois à 4 ans</li><li><b>Forme</b>Théâtre d'objets, chants a cappella, bruitages, albums jeunesse</li><li><b>Saisons</b>4 versions : printemps, été, automne, hiver</li><li><b>Durée</b>20 minutes</li><li><b>Jauge</b>Petites jauges, en intimité</li><li><b>Déjà joué</b>20 dates en circuit informel</li><li><b>Création et jeu</b>Amélie Zaroukian</li><li><b>Musique</b>Samuel Zaroukian</li><li><b>Suivre Milo</b><a href="https://www.instagram.com/milo_vadrouille/" target="_blank" rel="noopener" style="color:inherit">Instagram : @milo_vadrouille</a></li></ul></div></section><section id="images" class="vue"><div class="dedans"><h2>Photos et vidéos</h2><div class="teaser"><iframe src="https://www.youtube-nocookie.com/embed/MhMeIIfuzDw?rel=0" title="En chemin, Milo — teaser" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="credit" style="margin:8px 0 0">Captation : Corinne Gomez</p><a class="yt" href="https://youtu.be/MhMeIIfuzDw" target="_blank" rel="noopener">Voir le teaser sur YouTube ↗</a><div class="photos-milo"><figure class="photo-milo"><a href="affiche-milo.jpg" target="_blank" rel="noopener"><img src="affiche-milo.jpg" alt="Affiche : Milo, petit renard en vadrouille, spectacle très jeune public, 9 mois – 4 ans" loading="lazy"></a><figcaption>L'affiche</figcaption></figure><figure class="photo-milo"><img src="decor-automne.jpg" alt="Le décor de Milo en automne : 2 cagettes en bois, des feuilles mortes, des nuages suspendus, une ardoise « Automne »" loading="lazy"><figcaption>Le décor, version automne</figcaption></figure><figure class="photo-milo"><img src="lit-de-milo.jpg" alt="Milo, petit renard en peluche, sur son lit en bois marqué « Le lit de Milo », devant le décor en cagettes" loading="lazy"><figcaption>Le lit de Milo</figcaption></figure></div></div></section><section id="accueillir" class="vue"><div class="dedans"><h2>Accueillir Milo</h2><p>Pour recevoir le spectacle, écrivez au Collectif : <b><a href="mailto:22h13min@gmail.com" style="color:inherit">22h13min@gmail.com</a></b>. La fiche programmateur est disponible sur demande.</p><a class="pied-col" href="../index.html">Collectif 22h13min · 22h13.fr</a></div></section>
+</main>
+
+<script>
+(function(){
+  var vues=[].slice.call(document.querySelectorAll('.vue')), ordre=vues.map(function(v){return v.id}), noms={};
+  document.querySelectorAll('nav.haut ul a').forEach(function(a){noms[a.getAttribute('href').slice(1)]=a.textContent});
+  vues.forEach(function(v,i){ if(v.id==='accueil')return;
+    var d=document.createElement('div');d.className='suite';var p=ordre[i-1],n=ordre[i+1];
+    var ap=document.createElement('a');ap.href='#'+p;ap.textContent='← '+(p==='accueil'?'Accueil':noms[p]);
+    var an=document.createElement('a');if(n){an.href='#'+n;an.textContent=noms[n]+' →'}else{an.className='vide';an.textContent='.'}
+    d.appendChild(ap);d.appendChild(an);v.appendChild(d)});
+  function afficher(){var id=(location.hash||'').slice(1);if(ordre.indexOf(id)<0)id='accueil';
+    vues.forEach(function(v){v.classList.toggle('active',v.id===id)});
+    document.querySelectorAll('nav.haut ul a').forEach(function(a){if(a.getAttribute('href')==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    document.body.classList.toggle('sur-accueil',id==='accueil');window.scrollTo(0,0)}
+  addEventListener('hashchange',afficher);afficher();
+})();
+</script>
+
+</body>
+</html>
