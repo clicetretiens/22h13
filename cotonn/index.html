@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cotonn — duo du quotidien au son décalé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fredoka:wght@500;600&family=Nunito:ital,wght@0,400;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box} html,body{margin:0}
+body{min-height:100svh;display:flex;flex-direction:column;font-size:18px;line-height:1.6;background:#F1EE51;color:#3A1027;font-family:'Nunito',sans-serif}
+img{display:block;max-width:100%}
+a{color:#C91265}
+nav.haut{flex:0 0 auto;position:relative;display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 22px;min-height:52px;flex-wrap:wrap;background:#C91265}
+nav.haut a{color:#FFF6C9}
+nav.haut ul{list-style:none;margin:0;padding:0;display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:center}
+nav.haut ul a{text-decoration:none;font-size:16px;letter-spacing:.08em;opacity:.9}
+nav.haut ul a[aria-current]{opacity:1;color:#F1EE51;border-bottom:2px solid #F1EE51}
+nav.haut .col,.retour-col{background:#C0295E;color:#FFF3DC!important;opacity:1;padding:6px 12px;border-radius:3px;font-family:Arial,sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;box-shadow:0 0 0 2px #FFF3DC}
+nav.haut .col{position:absolute;left:22px;top:50%;transform:translateY(-50%)}
+main{flex:1 1 auto;display:flex;flex-direction:column}
+.vue{display:none;flex:1 1 auto;flex-direction:column}
+.vue.active{display:flex}
+.vue .dedans{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;width:100%;max-width:960px;margin:0 auto;padding:34px 24px}
+.suite{display:flex;justify-content:space-between;max-width:960px;width:100%;margin:0 auto;padding:12px 24px 18px}
+.suite a{text-decoration:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#C91265}
+.suite .vide{visibility:hidden}
+body.sur-accueil nav.haut{display:none}
+.vue.accueil .dedans{max-width:none;padding:0}
+h1,h2{font-family:'Fredoka',sans-serif;font-weight:600;color:#C91265;margin:0 0 14px;letter-spacing:.01em}
+h2{font-size:40px;line-height:1.1;align-self:flex-start;border-bottom:4px solid #C91265;padding-bottom:2px}
+.vue:not(.accueil) p:not([class]){text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+.accroche{font-family:'Amatic SC',cursive;font-weight:700;font-size:34px;line-height:1.1;color:#3A1027;margin:0 0 12px}
+.credit{font-style:italic;font-size:15px;color:#C91265;margin-top:14px}
+.infos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 0;padding:0;list-style:none}
+.infos li{padding:14px 16px;background:rgba(255,255,255,.55);border-left:5px solid #C91265;border-radius:4px}
+.infos b{display:block;font-family:'Fredoka',sans-serif;font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#C91265;margin-bottom:2px}
+/* accueil */
+.hero{position:relative;flex:1;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;overflow:hidden;background:#F1EE51}
+.hero .retour-col{position:absolute;top:14px;left:14px;z-index:5}
+.hero .titre{position:relative;z-index:2;padding:6vh 16px 0}
+.hero h1{font-size:clamp(76px,15vw,150px);line-height:.9;margin:0}
+.hero .sous{display:inline-block;margin:10px 0 0;font-family:'Amatic SC',cursive;font-weight:700;font-size:clamp(26px,4vw,40px);line-height:1.1;color:#3A1027;border:3px solid #C91265;padding:4px 16px}
+.hero .menu{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px 0 0}
+.hero .menu a{text-decoration:none;padding:8px 18px;border-radius:30px;background:#C91265;color:#FFF6C9;font-family:'Fredoka',sans-serif;font-weight:500;font-size:15px;letter-spacing:.04em}
+.hero .menu a:hover{background:#3A1027}
+.hero .duo{position:relative;z-index:1;width:min(92vw,620px);margin-top:2vh}
+.ecoute iframe{width:100%;height:120px;border:0;margin-top:8px}
+.tout{margin-top:10px;font-size:16px}
+.affiche{width:100%;max-width:420px;margin:22px auto 0;border:5px solid #fff;box-shadow:6px 6px 0 #C91265}
+figcaption{font-size:14px;text-align:center;margin-top:10px}
+.pied-col{display:block;text-align:center;font-size:12px;margin-top:20px;color:#C91265}
+@media(max-width:900px){nav.haut{flex-direction:column;gap:8px;padding:10px 14px}nav.haut .col{position:static;transform:none;align-self:flex-start}}
+@media(max-width:640px){.infos{grid-template-columns:1fr}nav.haut ul{gap:12px}nav.haut ul a{font-size:14px}.vue .dedans{padding:22px 18px}.hero .titre{padding-top:9vh}}
+</style>
+</head>
+<body>
+<nav class="haut"><a class="col" href="../projets.html">← Les projets</a><ul><li><a href="#accueil">Accueil</a></li><li><a href="#projet">Le projet</a></li><li><a href="#ecouter">Écouter</a></li><li><a href="#venir">Faire venir Cotonn</a></li></ul></nav>
+<main>
+<section id="accueil" class="vue accueil"><div class="dedans"><div class="hero"><a class="retour-col" href="../projets.html">← Les projets</a><div class="titre"><h1>cotonn!</h1><p class="sous">Un duo du quotidien au son décalé</p><div class="menu"><a href="#projet">Le projet</a><a href="#ecouter">Écouter</a><a href="#venir">Faire venir Cotonn</a></div></div><img class="duo" src="duo.jpg" alt="Amélie et Samuel Zaroukian, le duo Cotonn, au clavier et aux machines"></div></div></section>
+<section id="projet" class="vue"><div class="dedans"><h2>Le projet</h2><p class="accroche">Embarquez pour un voyage poético-sonore.</p><p>Cotonn, c'est le duo d'Amélie et Samuel Zaroukian, né en 2017, à la naissance de Lou. Un cocon musical à 2 voix&nbsp;: des chansons qui parlent de nous et de notre vie, sur un ton décalé.</p><p>Samuel compose, chante et joue du clavier&nbsp;; Amélie chante. Pac Max les a rejoints au beatbox. Un concert théâtralisé, pour les petites jauges.</p><ul class="infos"><li><b>Forme</b>Concert théâtralisé, chanson à texte</li><li><b>Depuis</b>2017</li><li><b>Sur scène</b>Amélie Zaroukian (chant), Samuel Zaroukian (chant, clavier), Pac Max (beatbox)</li><li><b>Musique</b>Compositions de Samuel Zaroukian</li></ul><figure style="margin:0"><a href="affiche-2018.jpg" target="_blank" rel="noopener"><img class="affiche" src="affiche-2018.jpg" alt="Affiche du concert de Cotonn le 9 juin 2018, salle Paul Doumer à Fabrègues" loading="lazy"></a><figcaption>Concert du 9 juin 2018, salle Paul Doumer, Fabrègues</figcaption></figure><p class="credit">Cotonn · Collectif 22h13min</p></div></section>
+<section id="ecouter" class="vue"><div class="dedans"><h2>Écouter</h2><div class="ecoute"><p class="accroche" style="margin-bottom:0">Café noir</p><iframe title="Cotonn — Café noir" loading="lazy" allow="autoplay" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fsamuel-zaroukian%2Fcafe-noir-3&color=%23c91265&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false"></iframe></div><p class="tout"><a href="https://soundcloud.com/samuel-zaroukian" target="_blank" rel="noopener">Plus de musique sur SoundCloud →</a></p></div></section>
+<section id="venir" class="vue"><div class="dedans"><h2>Faire venir Cotonn</h2><p class="accroche">Une salle, une soirée, un petit lieu&nbsp;?</p><p>Écrivez au Collectif&nbsp;: <b><a href="mailto:22h13min@gmail.com" style="color:inherit">22h13min@gmail.com</a></b>.</p><a class="pied-col" href="../index.html">Collectif 22h13min · 22h13.fr</a></div></section>
+</main>
+
+<script>
+(function(){
+  var vues=[].slice.call(document.querySelectorAll('.vue')), ordre=vues.map(function(v){return v.id}), noms={};
+  document.querySelectorAll('nav.haut ul a').forEach(function(a){noms[a.getAttribute('href').slice(1)]=a.textContent});
+  vues.forEach(function(v,i){ if(v.id==='accueil')return;
+    var d=document.createElement('div');d.className='suite';var p=ordre[i-1],n=ordre[i+1];
+    var ap=document.createElement('a');ap.href='#'+p;ap.textContent='← '+(p==='accueil'?'Accueil':noms[p]);
+    var an=document.createElement('a');if(n){an.href='#'+n;an.textContent=noms[n]+' →'}else{an.className='vide';an.textContent='.'}
+    d.appendChild(ap);d.appendChild(an);v.appendChild(d)});
+  function afficher(){var id=(location.hash||'').slice(1);if(ordre.indexOf(id)<0)id='accueil';
+    vues.forEach(function(v){v.classList.toggle('active',v.id===id)});
+    document.querySelectorAll('nav.haut ul a').forEach(function(a){if(a.getAttribute('href')==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    document.body.classList.toggle('sur-accueil',id==='accueil');window.scrollTo(0,0)}
+  addEventListener('hashchange',afficher);afficher();
+})();
+</script>
+
+</body>
+</html>

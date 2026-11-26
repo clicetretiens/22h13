@@ -41,7 +41,7 @@ footer.pied{flex:0 0 auto;text-align:center;padding:10px 20px;font-size:12px;col
 }
 
 .tete{text-align:center;margin-bottom:22px}
-.portes{display:grid;grid-template-columns:repeat(3,minmax(0,230px));justify-content:center;gap:52px;height:min(60vh,460px)}
+.portes{display:grid;grid-template-columns:repeat(4,minmax(0,230px));justify-content:center;gap:52px;height:min(60vh,460px)}
 .porte{position:relative;display:block;text-decoration:none;color:#fff;border-radius:999px 999px 4px 4px;overflow:hidden;box-shadow:0 12px 30px rgba(6,31,95,.25);transition:transform .45s,box-shadow .45s}
 .porte:hover{transform:translateY(-6px);box-shadow:0 0 0 2px var(--fr),0 20px 40px rgba(6,31,95,.35)}
 .porte .fond{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1s}
@@ -54,16 +54,19 @@ footer.pied{flex:0 0 auto;text-align:center;padding:10px 20px;font-size:12px;col
 .p-sn .fond{background-image:url('img/porte-soleil-noir.jpg');background-size:auto 135%;background-position:62% 14%}
 .p-milo .fond{background:url('img/porte-milo.jpg') center 30%/cover no-repeat,#F8D3AE}
 .p-retrace .fond{background:url('img/porte-retrace.jpg') center top/cover no-repeat,#FDBE33}.p-retrace .tag{display:none}
+.p-cotonn .fond{background:url('img/porte-cotonn.jpg') center bottom/cover no-repeat,#F1EE51}
 .p-paq .fond{background:radial-gradient(circle at 25% 64%,#fff 0 4%,#FFD96A 4% 5.5%,transparent 5.6%),radial-gradient(circle at 68% 60%,#fff 0 3%,#FFD96A 3% 4.3%,transparent 4.4%),radial-gradient(circle at 45% 72%,#fff 0 3%,#FFD96A 3% 4.2%,transparent 4.3%),linear-gradient(#BFE3F2 0%,#E8F4EC 50%,#A9CF8F 51%,#8DBE74)}
-@media(max-width:900px){.portes{grid-template-columns:repeat(3,minmax(0,200px));height:auto}.porte{aspect-ratio:3/4.3}}
-@media(max-width:520px){.portes{grid-template-columns:repeat(3,1fr);gap:8px}.porte{aspect-ratio:3/5}.porte .tag,.porte p{display:none}.tete{margin-bottom:10px}.tete h1{font-size:28px}.porte .txt{padding:8px 6px 10px}}
+@media(max-width:1180px){.portes{gap:32px}}
+@media(max-width:900px){.portes{grid-template-columns:repeat(4,minmax(0,170px));gap:20px;height:auto}.porte{aspect-ratio:3/5}}
+@media(max-width:620px){.portes{grid-template-columns:repeat(2,minmax(0,150px));gap:16px}.porte{aspect-ratio:3/4.6}}
+@media(max-width:520px){.porte .tag,.porte p{display:none}.tete{margin-bottom:10px}.tete h1{font-size:28px}.porte .txt{padding:8px 6px 10px}}
 </style>
 </head>
 <body class="">
 <header class="barre"><a class="marque" href="index.html"><span>COLLECTIF</span><b>22H13</b><span>MIN</span></a><nav><ul><li><a href="index.html">Accueil</a></li><li><a href="collectif.html">Le collectif</a></li><li><a href="projets.html" class="on">Projets</a></li><li><a href="agenda.html">Agenda</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header>
 <main><div class="cadre">
 <div class="tete"><p class="kicker">Les projets</p><h1>Poussez une porte</h1></div>
-<div class="portes"><a class="porte p-sn" href="soleil-noir/index.html"><div class="fond"></div><div class="voile"></div><span class="tag">Création 2026-2027</span><div class="txt"><h3>Soleil noir</h3><p>Requiem et poèmes de Verlaine</p></div></a><a class="porte p-milo" href="milo/index.html"><div class="fond"></div><div class="voile"></div><span class="tag">Jeune public</span><div class="txt"><h3>En chemin, Milo</h3><p>Théâtre d'objets, 9 mois – 4 ans</p></div></a><a class="porte p-retrace" href="retrace/index.html"><div class="fond"></div><div class="voile"></div><span class="tag">Patrimoine</span><div class="txt"><h3>[Re]trace</h3><p>Visites patrimoniales théâtralisées</p></div></a></div>
+<div class="portes"><a class="porte p-sn" href="soleil-noir/index.html"><div class="fond"></div><div class="voile"></div><span class="tag">Création 2026-2027</span><div class="txt"><h3>Soleil noir</h3><p>Requiem et poèmes de Verlaine</p></div></a><a class="porte p-milo" href="milo/index.html"><div class="fond"></div><div class="voile"></div><span class="tag">Jeune public</span><div class="txt"><h3>En chemin, Milo</h3><p>Théâtre d'objets, 9 mois – 4 ans</p></div></a><a class="porte p-retrace" href="retrace/index.html"><div class="fond"></div><div class="voile"></div><span class="tag">Patrimoine</span><div class="txt"><h3>[Re]trace</h3><p>Visites patrimoniales théâtralisées</p></div></a><a class="porte p-cotonn" href="cotonn/index.html"><div class="fond"></div><div class="voile"></div><span class="tag">Chanson</span><div class="txt"><h3>Cotonn</h3><p>Duo du quotidien au son décalé</p></div></a></div>
 </div></main>
 <footer class="pied">Collectif 22h13min · L'heure de l'art · Cournonterral, Hérault · 22h13.fr</footer>
 
