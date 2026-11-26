@@ -283,7 +283,7 @@
 
   <p class="intertitre">2 solistes, 2 professionnels, à la tête du projet</p>
 
-  <figure class="portrait"><span>Photo à venir</span></figure>
+  <figure class="portrait" style="border:0"><img src="photos/clavier.jpg" alt="Samuel Zaroukian, de dos, au clavier face au chœur"></figure>
 
   <h3>Samuel Zaroukian</h3>
   <p class="role">Composition, direction musicale, baryton solo</p>
@@ -365,7 +365,12 @@
   var MEDIAS = {
     sons: [],
     videos: [],
-    photos: []
+    photos: [
+      { fichier: 'photos/tribune.jpg', legende: 'En concert, depuis la tribune d\u2019une église' },
+      { fichier: 'photos/micros.jpg', legende: 'Les Murmures de Lou autour des micros' },
+      { fichier: 'photos/clavier.jpg', legende: 'Samuel Zaroukian au clavier, face au chœur' },
+      { fichier: 'photos/groupe.jpg', legende: 'Les Murmures de Lou et Samuel Zaroukian' }
+    ]
   };
 
   function el(tag, attrs, text) {
