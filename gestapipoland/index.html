@@ -57,27 +57,38 @@ h2{font-size:42px;line-height:1.05;align-self:flex-start;color:var(--noir);borde
 .trois b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:24px;letter-spacing:.06em;color:var(--fu)}
 .objets{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .objets li{font-family:'Special Elite',monospace;background:#fff;border:2px solid var(--noir);padding:4px 10px;font-size:16px}
-/* accueil */
-.hero{position:relative;flex:1;min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:4vw;padding:6vh 6vw;overflow:hidden}
+/* accueil : l'affiche, cliquable */
+.hero{position:relative;flex:1;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 16px 18px;background:#F6F1E6 url('affiche.jpg') center/cover no-repeat;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(246,241,230,.95)}
 .hero .retour-col{position:absolute;top:14px;left:14px;z-index:5}
-.hero .aff{width:100%;max-width:520px;justify-self:end;box-shadow:10px 10px 0 var(--noir)}
-.hero .titre{justify-self:start}
-.hero h1{font-size:clamp(54px,8vw,104px);line-height:.92;color:var(--noir)}
-.hero h1 span{color:var(--fu)}
-.hero .sous{font-family:'Special Elite',monospace;font-size:clamp(18px,2vw,22px);margin:6px 0 0}
-.hero .crea{display:inline-block;margin:14px 0 0;background:var(--fu);color:#fff;font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:.08em;padding:4px 14px;font-size:18px;transform:rotate(-1.5deg)}
-.hero .menu{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
-.hero .menu a{text-decoration:none;padding:8px 18px;background:var(--noir);color:var(--papier);font-family:'Anton',sans-serif;text-transform:uppercase;font-size:15px;letter-spacing:.08em}
+.aff-zone{position:relative;z-index:2;width:min(76svh,94vw);aspect-ratio:1/1;box-shadow:0 18px 50px rgba(20,20,20,.18)}
+.aff-zone img{width:100%;height:100%;display:block}
+.aff-zone a{position:absolute;display:block;border-radius:10px;outline:3px dashed transparent;outline-offset:-3px;transition:outline-color .25s,background .25s}
+.aff-zone a span{position:absolute;left:50%;bottom:8px;transform:translateX(-50%) translateY(4px);white-space:nowrap;background:var(--noir);color:var(--papier);font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:14px;padding:4px 10px;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none}
+.aff-zone a:hover,.aff-zone a:focus-visible{outline-color:var(--fu);background:rgba(229,23,110,.07)}
+.aff-zone a:hover span,.aff-zone a:focus-visible span{opacity:1;transform:translateX(-50%) translateY(0)}
+.aff-zone.indice a{animation:indice 1.6s ease 2}
+@keyframes indice{0%,100%{outline-color:transparent}50%{outline-color:rgba(229,23,110,.6)}}
+.z-titre{left:9%;top:2%;width:85%;height:30%}
+.z-crea{left:25%;top:42%;width:50%;height:8.5%}
+.z-bouche{left:21%;top:51%;width:58%;height:30%}
+.z-radio{left:4%;top:68%;width:18%;height:22%}
+.z-ruban{left:21%;top:84%;width:47%;height:12%}
+.z-logo{left:84.5%;top:85%;width:11%;height:11%}
+.hero .astuce{position:relative;z-index:2;margin:12px 0 0;font-family:'Special Elite',monospace;font-size:15px;color:#555}
+.hero .menu{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 0}
+.hero .menu a{text-decoration:none;padding:7px 16px;background:var(--noir);color:var(--papier);font-family:'Anton',sans-serif;text-transform:uppercase;font-size:14px;letter-spacing:.08em}
 .hero .menu a:hover{background:var(--fu)}
+@media(max-width:640px){.aff-zone a span{font-size:12px}.hero{padding-top:58px}}
 .pied-col{display:block;text-align:center;font-size:12px;margin-top:20px;color:var(--fu)}
-@media(max-width:900px){nav.haut{flex-direction:column;gap:8px;padding:10px 14px}nav.haut .col{position:static;transform:none;align-self:flex-start}.hero{grid-template-columns:1fr;padding:60px 18px 30px;gap:24px}.hero .aff{justify-self:center;max-width:420px}.hero .titre{justify-self:center;text-align:center}.hero .menu{justify-content:center}}
+@media(max-width:900px){nav.haut{flex-direction:column;gap:8px;padding:10px 14px}nav.haut .col{position:static;transform:none;align-self:flex-start}}
 @media(max-width:640px){.infos,.trois{grid-template-columns:1fr}nav.haut ul{gap:12px}nav.haut ul a{font-size:14px}.vue .dedans{padding:22px 18px}}
 </style>
 </head>
 <body>
 <nav class="haut"><a class="col" href="../projets.html">← Les projets</a><ul><li><a href="#accueil">Accueil</a></li><li><a href="#spectacle">Le spectacle</a></li><li><a href="#ecriture">L'écriture</a></li><li><a href="#pratique">En pratique</a></li><li><a href="#accueillir">Accueillir le spectacle</a></li></ul></nav>
 <main>
-<section id="accueil" class="vue accueil"><div class="dedans"><div class="hero"><a class="retour-col" href="../projets.html">← Les projets</a><img class="aff" src="affiche.jpg" alt="Affiche de Gesta Pipo Land : une bouche bâillonnée d'un ruban fuchsia, une vieille radio sur des pavés"><div class="titre"><h1><span>Gesta</span><br>Pipo Land</h1><p class="sous">Soliloque sur la liberté d'expression</p><span class="crea">Création 2027</span><div class="menu"><a href="#spectacle">Le spectacle</a><a href="#ecriture">L'écriture</a><a href="#pratique">En pratique</a><a href="#accueillir">Accueillir</a></div></div></div></div></section>
+<section id="accueil" class="vue accueil"><div class="dedans"><div class="hero"><a class="retour-col" href="../projets.html">← Les projets</a><div class="aff-zone indice"><img src="affiche.jpg" alt="Affiche de Gesta Pipo Land, soliloque sur la liberté d'expression, théâtre de résistance, création en cours : une bouche bâillonnée d'un ruban fuchsia, une vieille radio sur des pavés"><a class="z-titre" href="#spectacle" aria-label="Le spectacle"><span>Le spectacle</span></a><a class="z-crea" href="#pratique" aria-label="En pratique"><span>En pratique</span></a><a class="z-bouche" href="#ecriture" aria-label="L'écriture"><span>L'écriture</span></a><a class="z-radio" href="#pratique" aria-label="En pratique"><span>En pratique</span></a><a class="z-ruban" href="#accueillir" aria-label="Accueillir le spectacle"><span>Couper le ruban : accueillir</span></a><a class="z-logo" href="../index.html" aria-label="Collectif 22h13min"><span>Le collectif</span></a></div><p class="astuce">Touchez l'affiche pour entrer.</p><div class="menu"><a href="#spectacle">Le spectacle</a><a href="#ecriture">L'écriture</a><a href="#pratique">En pratique</a><a href="#accueillir">Accueillir</a></div></div></div></section>
 <section id="spectacle" class="vue"><div class="dedans"><h2>Le spectacle</h2><p class="accroche">Une inauguration. Une faille. Une parole qui déborde.</p><p>Bienvenue à Gesta Pipo Land. Un pays merveilleux où chacun est libre de s'exprimer… à condition de penser correctement.</p><p>Une femme s'avance pour célébrer officiellement la liberté d'expression. Le protocole est impeccable. Le discours est prêt. Mais un mot échappe à la surveillance, puis un autre. Les voix qu'elle tentait de contenir envahissent peu à peu la cérémonie.</p><p class="citation">« Jusqu'où se tait-on pour rester à sa place&nbsp;? »</p><div class="trois"><div><b>Rire</b>Le protocole et l'apéritif promis deviennent une farce.</div><div><b>Douter</b>La liberté s'inaugure devant une bouche muselée.</div><div><b>Résister</b>La parole quitte le discours et reprend sa place.</div></div><p class="credit">Une comédienne. Plusieurs voix. Et la place publique pour théâtre.</p></div></section>
 <section id="ecriture" class="vue"><div class="dedans"><h2>L'écriture</h2><p class="accroche">Le contrôle se fissure.</p><p>D'abord, tout tient. Le sourire, les formules, la posture. Puis le discours se dérègle. Un lapsus devient une brèche. Les voix intérieures se contredisent. Le corps s'éloigne du pupitre. La cérémonie ne peut plus reprendre son cours.</p><p class="citation">« Ce qui devait être dit n'est plus ce qui se dit. »</p><p style="margin-top:22px"><b>Les objets du pouvoir.</b> Peu d'objets, beaucoup de sens&nbsp;:</p><ul class="objets"><li>une bouche muselée</li><li>un ruban à couper</li><li>un pupitre, un faux micro</li><li>un discours imprimé</li><li>une table d'apéritif</li></ul><p class="credit">Écriture, interprétation et mise en scène&nbsp;: Amélie Zaroukian</p></div></section>
 <section id="pratique" class="vue"><div class="dedans"><h2>En pratique</h2><p>Gesta Pipo Land prend appui sur le rire pour aborder une question essentielle&nbsp;: que devient la liberté d'expression lorsque chacun apprend à mesurer ses mots&nbsp;? Une forme de proximité, sans amplification, qui peut se jouer sur une petite place, dans une cour, un parvis ou un espace intérieur adapté. La rencontre avec le public peut prolonger la représentation.</p><ul class="infos"><li><b>Forme</b>Farce politique contemporaine, soliloque&nbsp;: une interprète, plusieurs voix</li><li><b>Création</b>2027, Collectif 22h13min</li><li><b>Lieux</b>Place, cour, parvis, rue calme, intérieur adaptable</li><li><b>Espace</b>6 × 5 m conseillé, à confirmer</li><li><b>Son</b>Jeu sans amplification, environnement calme</li><li><b>Durée et jauge</b>À confirmer après les résidences</li><li><b>Montage</b>Environ 2 h (prévisionnel)</li><li><b>Écriture et jeu</b>Amélie Zaroukian</li></ul></div></section>
