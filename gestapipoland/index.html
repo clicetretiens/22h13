@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gesta Pipo Land — soliloque sur la liberté d'expression</title>
+<meta name="description" content="Une inauguration. Une faille. Une parole qui déborde. Farce politique contemporaine pour une comédienne et plusieurs voix, création 2027.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Collectif 22h13min">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Gesta Pipo Land — soliloque sur la liberté d'expression">
+<meta property="og:description" content="Une inauguration. Une faille. Une parole qui déborde. Farce politique contemporaine pour une comédienne et plusieurs voix, création 2027.">
+<meta property="og:url" content="https://22h13.fr/gestapipoland/">
+<meta property="og:image" content="https://22h13.fr/img/partage/gestapipoland.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Special+Elite&family=Work+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box} html,body{margin:0}
+:root{--fu:#E5176E;--noir:#141414;--papier:#F2EDE4}
+body{min-height:100svh;display:flex;flex-direction:column;font-size:18px;line-height:1.6;background:var(--papier);color:var(--noir);font-family:'Work Sans',sans-serif}
+img{display:block;max-width:100%}
+a{color:var(--fu)}
+nav.haut{flex:0 0 auto;position:relative;display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 22px;min-height:52px;flex-wrap:wrap;background:var(--noir)}
+nav.haut a{color:var(--papier)}
+nav.haut ul{list-style:none;margin:0;padding:0;display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:center}
+nav.haut ul a{text-decoration:none;font-size:16px;letter-spacing:.08em;opacity:.9}
+nav.haut ul a[aria-current]{opacity:1;color:var(--fu);border-bottom:2px solid var(--fu)}
+nav.haut .col,.retour-col{background:#C0295E;color:#FFF3DC!important;opacity:1;padding:6px 12px;border-radius:3px;font-family:Arial,sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;box-shadow:0 0 0 2px #FFF3DC}
+nav.haut .col{position:absolute;left:22px;top:50%;transform:translateY(-50%)}
+main{flex:1 1 auto;display:flex;flex-direction:column}
+.vue{display:none;flex:1 1 auto;flex-direction:column}
+.vue.active{display:flex}
+.vue .dedans{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;width:100%;max-width:960px;margin:0 auto;padding:34px 24px}
+.suite{display:flex;justify-content:space-between;max-width:960px;width:100%;margin:0 auto;padding:12px 24px 18px}
+.suite a{text-decoration:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fu)}
+.suite .vide{visibility:hidden}
+body.sur-accueil nav.haut{display:none}
+.vue.accueil .dedans{max-width:none;padding:0}
+h1,h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;margin:0 0 14px;letter-spacing:.02em}
+h2{font-size:42px;line-height:1.05;align-self:flex-start;color:var(--noir);border-bottom:6px solid var(--fu);padding-bottom:2px}
+.vue:not(.accueil) p:not([class]){text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+.accroche{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:28px;line-height:1.15;color:var(--fu);margin:0 0 14px;letter-spacing:.02em}
+.citation{font-family:'Special Elite',monospace;font-size:21px;line-height:1.4;margin:20px 0 0;padding:14px 18px;background:#fff;border-left:6px solid var(--fu);box-shadow:4px 4px 0 var(--noir)}
+.credit{font-style:italic;font-size:15px;color:var(--fu);margin-top:14px}
+.infos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 0;padding:0;list-style:none}
+.infos li{padding:14px 16px;background:#fff;border-left:5px solid var(--fu);border-radius:2px}
+.infos b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--fu);margin-bottom:2px}
+.trois{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 0}
+.trois div{background:var(--noir);color:var(--papier);padding:16px}
+.trois b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:24px;letter-spacing:.06em;color:var(--fu)}
+.objets{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.objets li{font-family:'Special Elite',monospace;background:#fff;border:2px solid var(--noir);padding:4px 10px;font-size:16px}
+/* accueil */
+.hero{position:relative;flex:1;min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:4vw;padding:6vh 6vw;overflow:hidden}
+.hero .retour-col{position:absolute;top:14px;left:14px;z-index:5}
+.hero .aff{width:100%;max-width:520px;justify-self:end;box-shadow:10px 10px 0 var(--noir)}
+.hero .titre{justify-self:start}
+.hero h1{font-size:clamp(54px,8vw,104px);line-height:.92;color:var(--noir)}
+.hero h1 span{color:var(--fu)}
+.hero .sous{font-family:'Special Elite',monospace;font-size:clamp(18px,2vw,22px);margin:6px 0 0}
+.hero .crea{display:inline-block;margin:14px 0 0;background:var(--fu);color:#fff;font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:.08em;padding:4px 14px;font-size:18px;transform:rotate(-1.5deg)}
+.hero .menu{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+.hero .menu a{text-decoration:none;padding:8px 18px;background:var(--noir);color:var(--papier);font-family:'Anton',sans-serif;text-transform:uppercase;font-size:15px;letter-spacing:.08em}
+.hero .menu a:hover{background:var(--fu)}
+.pied-col{display:block;text-align:center;font-size:12px;margin-top:20px;color:var(--fu)}
+@media(max-width:900px){nav.haut{flex-direction:column;gap:8px;padding:10px 14px}nav.haut .col{position:static;transform:none;align-self:flex-start}.hero{grid-template-columns:1fr;padding:60px 18px 30px;gap:24px}.hero .aff{justify-self:center;max-width:420px}.hero .titre{justify-self:center;text-align:center}.hero .menu{justify-content:center}}
+@media(max-width:640px){.infos,.trois{grid-template-columns:1fr}nav.haut ul{gap:12px}nav.haut ul a{font-size:14px}.vue .dedans{padding:22px 18px}}
+</style>
+</head>
+<body>
+<nav class="haut"><a class="col" href="../projets.html">← Les projets</a><ul><li><a href="#accueil">Accueil</a></li><li><a href="#spectacle">Le spectacle</a></li><li><a href="#ecriture">L'écriture</a></li><li><a href="#pratique">En pratique</a></li><li><a href="#accueillir">Accueillir le spectacle</a></li></ul></nav>
+<main>
+<section id="accueil" class="vue accueil"><div class="dedans"><div class="hero"><a class="retour-col" href="../projets.html">← Les projets</a><img class="aff" src="affiche.jpg" alt="Affiche de Gesta Pipo Land : une bouche bâillonnée d'un ruban fuchsia, une vieille radio sur des pavés"><div class="titre"><h1><span>Gesta</span><br>Pipo Land</h1><p class="sous">Soliloque sur la liberté d'expression</p><span class="crea">Création 2027</span><div class="menu"><a href="#spectacle">Le spectacle</a><a href="#ecriture">L'écriture</a><a href="#pratique">En pratique</a><a href="#accueillir">Accueillir</a></div></div></div></div></section>
+<section id="spectacle" class="vue"><div class="dedans"><h2>Le spectacle</h2><p class="accroche">Une inauguration. Une faille. Une parole qui déborde.</p><p>Bienvenue à Gesta Pipo Land. Un pays merveilleux où chacun est libre de s'exprimer… à condition de penser correctement.</p><p>Une femme s'avance pour célébrer officiellement la liberté d'expression. Le protocole est impeccable. Le discours est prêt. Mais un mot échappe à la surveillance, puis un autre. Les voix qu'elle tentait de contenir envahissent peu à peu la cérémonie.</p><p class="citation">« Jusqu'où se tait-on pour rester à sa place&nbsp;? »</p><div class="trois"><div><b>Rire</b>Le protocole et l'apéritif promis deviennent une farce.</div><div><b>Douter</b>La liberté s'inaugure devant une bouche muselée.</div><div><b>Résister</b>La parole quitte le discours et reprend sa place.</div></div><p class="credit">Une comédienne. Plusieurs voix. Et la place publique pour théâtre.</p></div></section>
+<section id="ecriture" class="vue"><div class="dedans"><h2>L'écriture</h2><p class="accroche">Le contrôle se fissure.</p><p>D'abord, tout tient. Le sourire, les formules, la posture. Puis le discours se dérègle. Un lapsus devient une brèche. Les voix intérieures se contredisent. Le corps s'éloigne du pupitre. La cérémonie ne peut plus reprendre son cours.</p><p class="citation">« Ce qui devait être dit n'est plus ce qui se dit. »</p><p style="margin-top:22px"><b>Les objets du pouvoir.</b> Peu d'objets, beaucoup de sens&nbsp;:</p><ul class="objets"><li>une bouche muselée</li><li>un ruban à couper</li><li>un pupitre, un faux micro</li><li>un discours imprimé</li><li>une table d'apéritif</li></ul><p class="credit">Écriture, interprétation et mise en scène&nbsp;: Amélie Zaroukian</p></div></section>
+<section id="pratique" class="vue"><div class="dedans"><h2>En pratique</h2><p>Gesta Pipo Land prend appui sur le rire pour aborder une question essentielle&nbsp;: que devient la liberté d'expression lorsque chacun apprend à mesurer ses mots&nbsp;? Une forme de proximité, sans amplification, qui peut se jouer sur une petite place, dans une cour, un parvis ou un espace intérieur adapté. La rencontre avec le public peut prolonger la représentation.</p><ul class="infos"><li><b>Forme</b>Farce politique contemporaine, soliloque&nbsp;: une interprète, plusieurs voix</li><li><b>Création</b>2027, Collectif 22h13min</li><li><b>Lieux</b>Place, cour, parvis, rue calme, intérieur adaptable</li><li><b>Espace</b>6 × 5 m conseillé, à confirmer</li><li><b>Son</b>Jeu sans amplification, environnement calme</li><li><b>Durée et jauge</b>À confirmer après les résidences</li><li><b>Montage</b>Environ 2 h (prévisionnel)</li><li><b>Écriture et jeu</b>Amélie Zaroukian</li></ul></div></section>
+<section id="accueillir" class="vue"><div class="dedans"><h2>Accueillir le spectacle</h2><p class="accroche">Faire place à la parole.</p><p>Une place de village, une cour, un parvis&nbsp;? Pour recevoir Gesta Pipo Land, écrivez au Collectif&nbsp;: <b><a href="mailto:22h13min@gmail.com" style="color:inherit">22h13min@gmail.com</a></b>. Conditions de cession sur devis.</p><span class="pied-col"><a href="../index.html" style="color:inherit;text-decoration:none">Collectif 22h13min · 22h13.fr</a> · <a href="../mentions-legales.html" style="color:inherit">Mentions légales</a></span></div></section>
+</main>
+
+<script>
+(function(){
+  var vues=[].slice.call(document.querySelectorAll('.vue')), ordre=vues.map(function(v){return v.id}), noms={};
+  document.querySelectorAll('nav.haut ul a').forEach(function(a){noms[a.getAttribute('href').slice(1)]=a.textContent});
+  vues.forEach(function(v,i){ if(v.id==='accueil')return;
+    var d=document.createElement('div');d.className='suite';var p=ordre[i-1],n=ordre[i+1];
+    var ap=document.createElement('a');ap.href='#'+p;ap.textContent='← '+(p==='accueil'?'Accueil':noms[p]);
+    var an=document.createElement('a');if(n){an.href='#'+n;an.textContent=noms[n]+' →'}else{an.className='vide';an.textContent='.'}
+    d.appendChild(ap);d.appendChild(an);v.appendChild(d)});
+  function afficher(){var id=(location.hash||'').slice(1);if(ordre.indexOf(id)<0)id='accueil';
+    vues.forEach(function(v){v.classList.toggle('active',v.id===id)});
+    document.querySelectorAll('nav.haut ul a').forEach(function(a){if(a.getAttribute('href')==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    document.body.classList.toggle('sur-accueil',id==='accueil');window.scrollTo(0,0)}
+  addEventListener('hashchange',afficher);afficher();
+})();
+</script>
+
+</body>
+</html>
